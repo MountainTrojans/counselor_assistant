@@ -1,0 +1,6 @@
+framework module Pods_counselor_assistant {
+  umbrella header "Pods-counselor_assistant-umbrella.h"
+
+  export *
+  module * { export * }
+}
