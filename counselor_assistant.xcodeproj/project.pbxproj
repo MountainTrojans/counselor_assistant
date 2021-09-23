@@ -18,6 +18,9 @@
 		1CEA4F1A26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1B26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1C26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
+		1CEA4F1E26FCFAC700EB4385 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */; };
+		1CEA4F1F26FCFAC700EB4385 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */; };
+		1CEA4F2026FCFAC700EB4385 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */; };
 		7114B53FB14675007CAB25A8 /* Pods_counselor_assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCE7DE581E11E5840AF57B6 /* Pods_counselor_assistant.framework */; };
 		AF1E5A0E5C3B0E605DBEC173 /* Pods_counselor_assistant_counselor_assistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92029F5E997FD5EDB96785F4 /* Pods_counselor_assistant_counselor_assistantUITests.framework */; };
 		C745AAB9A220520B448A4B58 /* Pods_counselor_assistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9229094BF45677112856D7C /* Pods_counselor_assistantTests.framework */; };
@@ -57,6 +60,7 @@
 		1CB4869126F8EE1100A4D469 /* counselor_assistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counselor_assistantUITests.swift; sourceTree = "<group>"; };
 		1CB4869326F8EE1100A4D469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		46057039AB9C79C668994C01 /* Pods-counselor_assistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistantTests.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistantTests/Pods-counselor_assistantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		645F2F44FD052CF48D259B60 /* Pods-counselor_assistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistantTests.release.xcconfig"; path = "Target Support Files/Pods-counselor_assistantTests/Pods-counselor_assistantTests.release.xcconfig"; sourceTree = "<group>"; };
 		92029F5E997FD5EDB96785F4 /* Pods_counselor_assistant_counselor_assistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_counselor_assistant_counselor_assistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,7 @@
 				1CB4867826F8EE1000A4D469 /* Assets.xcassets */,
 				1CB4867A26F8EE1000A4D469 /* LaunchScreen.storyboard */,
 				1CB4867D26F8EE1000A4D469 /* Info.plist */,
+				1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */,
 			);
 			path = counselor_assistant;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 			files = (
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
 				1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */,
+				1CEA4F1E26FCFAC700EB4385 /* AccountViewController.swift in Sources */,
 				1CB4867226F8EE1000A4D469 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CEA4F1F26FCFAC700EB4385 /* AccountViewController.swift in Sources */,
 				1CB4868726F8EE1000A4D469 /* counselor_assistantTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CEA4F2026FCFAC700EB4385 /* AccountViewController.swift in Sources */,
 				1CB4869226F8EE1100A4D469 /* counselor_assistantUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
