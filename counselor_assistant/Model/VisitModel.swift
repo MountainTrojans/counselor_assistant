@@ -13,9 +13,10 @@ class VisitModel
 {
     public var visits: Array<Visit> = Array<Visit>()
     static let shared = VisitModel();
+    static let accountModel = AccountModel.sharedInstance
     
     let db = Firestore.firestore();
-    let username: String = "test";
+    let username: String = accountModel.gmail ?? "test";
     
     func loadExistingInfo() {
         let uploadedVideosRef = db.collection(username)
@@ -32,12 +33,14 @@ class VisitModel
                             let visitObj = document.data() as? [String: AnyObject]
                             
                             self.visits.append(Visit(billableCodeSelection: visitObj?["billableCodeSelection"] as? Int, programSelection: visitObj?["programSelection"] as? Int, nonBillableCodeSelection: visitObj?["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj?["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj?["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj?["serviceMinutes"] as? Double, documentationMinutes: visitObj?["documentationMinutes"] as? Double, noteWritten: visitObj?["noteWritten"] as? Bool, noteApproved: visitObj?["noteApproved"] as? Bool, CDI: visitObj?["CDI"] as? Bool))
+                            print(self.visits)
                         }
                     }
                 }
             }
         }
         
+
         
     }
     

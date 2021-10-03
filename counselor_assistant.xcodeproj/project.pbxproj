@@ -16,11 +16,7 @@
 		1CB4868726F8EE1000A4D469 /* counselor_assistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4868626F8EE1000A4D469 /* counselor_assistantTests.swift */; };
 		1CB4869226F8EE1100A4D469 /* counselor_assistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4869126F8EE1100A4D469 /* counselor_assistantUITests.swift */; };
 		1CDF5ADC270954C5004967AB /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADB270954C5004967AB /* Visit.swift */; };
-		1CDF5ADD270954C5004967AB /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADB270954C5004967AB /* Visit.swift */; };
-		1CDF5ADE270954C5004967AB /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADB270954C5004967AB /* Visit.swift */; };
 		1CDF5AE027095853004967AB /* VisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADF27095853004967AB /* VisitModel.swift */; };
-		1CDF5AE127095853004967AB /* VisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADF27095853004967AB /* VisitModel.swift */; };
-		1CDF5AE227095853004967AB /* VisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADF27095853004967AB /* VisitModel.swift */; };
 		1CEA4F1A26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1B26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1C26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
@@ -143,9 +139,6 @@
 				1CB4867826F8EE1000A4D469 /* Assets.xcassets */,
 				1CB4867A26F8EE1000A4D469 /* LaunchScreen.storyboard */,
 				1CB4867D26F8EE1000A4D469 /* Info.plist */,
-				1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */,
-				1CDF5ADB270954C5004967AB /* Visit.swift */,
-				1CDF5ADF27095853004967AB /* VisitModel.swift */,
 			);
 			path = counselor_assistant;
 			sourceTree = "<group>";
@@ -184,6 +177,8 @@
 		529E6CB22709392500BE8D07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CDF5ADB270954C5004967AB /* Visit.swift */,
+				1CDF5ADF27095853004967AB /* VisitModel.swift */,
 				529E6CB72709678E00BE8D07 /* AccountModel.swift */,
 			);
 			path = Model;
@@ -510,8 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CB4868726F8EE1000A4D469 /* counselor_assistantTests.swift in Sources */,
-				1CDF5ADD270954C5004967AB /* Visit.swift in Sources */,
-				1CDF5AE127095853004967AB /* VisitModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,8 +513,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CB4869226F8EE1100A4D469 /* counselor_assistantUITests.swift in Sources */,
-				1CDF5ADE270954C5004967AB /* Visit.swift in Sources */,
-				1CDF5AE227095853004967AB /* VisitModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
