@@ -41,19 +41,33 @@ class SignViewController: UIViewController {
   }
 
   // [END disconnect_tapped]
+    
   // [START toggle_auth]
   func toggleAuthUI() {
     if let _ = GIDSignIn.sharedInstance()?.currentUser?.authentication {
+        let email = (GIDSignIn.sharedInstance()?.currentUser?.profile.email)!
+        if(AccountModel.sharedInstance.validateEmail(email: email)){
+            performSegue(withIdentifier: "staffLogin", sender: self)
+            VisitModel.shared.loadExistingInfo();
+        } else{
+            GIDSignIn.sharedInstance().signOut()
+        }
+        
       // Signed in
-      signInButton.isHidden = true
-      //performSegue(withIdentifier: "login", sender: self)
-    } else {
-      signInButton.isHidden = false
-      
-      
+      //signInButton.isHidden = true
+      //performSegue(withIdentifier: "staffLogin", sender: self)
     }
+//      else {
+//      signInButton.isHidden = false
+//    }
   }
   // [END toggle_auth]
+    
+    func jumpStaff(){
+        performSegue(withIdentifier: "staffLogin", sender: self)
+    }
+
+    
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return UIStatusBarStyle.lightContent
   }

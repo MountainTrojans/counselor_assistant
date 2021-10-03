@@ -11,16 +11,29 @@ class AccountModel:NSObject{
     //singleton
     static let sharedInstance = AccountModel()
     var gmail:String?
+    var isSigned:Bool
+    var isAdmin:Bool
+    
+    //init of the data model
+    override init(){
+        isSigned = false
+        isAdmin = false
+    }
     
     private func extractEmail(email: String) -> String {
         let components = email.components(separatedBy: "@")
-        return components[1]
+        if(!components.isEmpty){
+            return components[1]
+        }
+        return "";
     }
     
     func validateEmail(email:String)->Bool{
-       
-        print(extractEmail(email: email))
-        
+        let domain = extractEmail(email: email)
+        if domain == "mountaincounseling.org"{
+            isSigned = true;
+            return true
+        }
         return false
     }
     
