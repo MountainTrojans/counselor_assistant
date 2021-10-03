@@ -68,23 +68,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKo-Kn-cZ3" customClass="GIDSignInButton">
-                                <rect key="frame" x="57" y="676" width="300" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="hKo-Kn-cZ3" customClass="GIDSignInButton">
+                                <rect key="frame" x="20" y="713" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3kc-39-dQD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pje-PJ-5r9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pje-PJ-5r9" firstAttribute="trailing" secondItem="hKo-Kn-cZ3" secondAttribute="trailing" constant="20" id="NcZ-v4-fia"/>
+                            <constraint firstItem="Pje-PJ-5r9" firstAttribute="bottom" secondItem="hKo-Kn-cZ3" secondAttribute="bottom" constant="50" id="SC5-Wz-Z26"/>
+                            <constraint firstItem="hKo-Kn-cZ3" firstAttribute="leading" secondItem="Pje-PJ-5r9" secondAttribute="leading" constant="20" id="h67-rY-gsW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Account" id="dRh-XW-gs2"/>
                     <connections>
                         <outlet property="signInButton" destination="hKo-Kn-cZ3" id="gk0-No-zYx"/>
+                        <segue destination="dpJ-sN-Zn9" kind="presentation" identifier="staffLogin" modalPresentationStyle="fullScreen" id="5bS-Ia-WQ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgp-Xl-A6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="797"/>
+            <point key="canvasLocation" x="1836" y="797"/>
+        </scene>
+        <!--StaffSetting-->
+        <scene sceneID="iEs-MZ-H4U">
+            <objects>
+                <viewController id="dpJ-sN-Zn9" userLabel="StaffSetting" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CAj-OE-Cc5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-Gt-Ntv">
+                                <rect key="frame" x="20" y="84" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PwI-W1-Ouv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aGa-DS-dOj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PSX-Gt-Ntv" firstAttribute="leading" secondItem="aGa-DS-dOj" secondAttribute="leading" constant="20" id="CNF-fw-v7b"/>
+                            <constraint firstItem="aGa-DS-dOj" firstAttribute="trailing" secondItem="PSX-Gt-Ntv" secondAttribute="trailing" constant="20" id="MRb-Ao-hay"/>
+                            <constraint firstItem="PSX-Gt-Ntv" firstAttribute="top" secondItem="aGa-DS-dOj" secondAttribute="top" constant="40" id="dIC-Nf-6R3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9nS-3f-znB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUh-GL-BfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2834.7826086956525" y="511.60714285714283"/>
         </scene>
         <!--Account-->
         <scene sceneID="A64-uG-gxh">

@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate ,GIDSignI
       }
       // Perform any operations on signed in user here.
         let email = user.profile.email
-        AccountModel.sharedInstance.validateEmail(email: email ?? "@")
+        
         
       
       // [START_EXCLUDE]
