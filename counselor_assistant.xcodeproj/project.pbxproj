@@ -15,6 +15,12 @@
 		1CB4867C26F8EE1000A4D469 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CB4867A26F8EE1000A4D469 /* LaunchScreen.storyboard */; };
 		1CB4868726F8EE1000A4D469 /* counselor_assistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4868626F8EE1000A4D469 /* counselor_assistantTests.swift */; };
 		1CB4869226F8EE1100A4D469 /* counselor_assistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4869126F8EE1100A4D469 /* counselor_assistantUITests.swift */; };
+		1CDF5ADC270954C5004967AB /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADB270954C5004967AB /* Visit.swift */; };
+		1CDF5ADD270954C5004967AB /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADB270954C5004967AB /* Visit.swift */; };
+		1CDF5ADE270954C5004967AB /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADB270954C5004967AB /* Visit.swift */; };
+		1CDF5AE027095853004967AB /* VisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADF27095853004967AB /* VisitModel.swift */; };
+		1CDF5AE127095853004967AB /* VisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADF27095853004967AB /* VisitModel.swift */; };
+		1CDF5AE227095853004967AB /* VisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF5ADF27095853004967AB /* VisitModel.swift */; };
 		1CEA4F1A26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1B26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1C26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
@@ -59,6 +65,8 @@
 		1CB4868D26F8EE1100A4D469 /* counselor_assistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = counselor_assistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB4869126F8EE1100A4D469 /* counselor_assistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counselor_assistantUITests.swift; sourceTree = "<group>"; };
 		1CB4869326F8EE1100A4D469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CDF5ADB270954C5004967AB /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		1CDF5ADF27095853004967AB /* VisitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitModel.swift; sourceTree = "<group>"; };
 		1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		46057039AB9C79C668994C01 /* Pods-counselor_assistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistantTests.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistantTests/Pods-counselor_assistantTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +141,8 @@
 				1CB4867A26F8EE1000A4D469 /* LaunchScreen.storyboard */,
 				1CB4867D26F8EE1000A4D469 /* Info.plist */,
 				1CEA4F1D26FCFAC700EB4385 /* AccountViewController.swift */,
+				1CDF5ADB270954C5004967AB /* Visit.swift */,
+				1CDF5ADF27095853004967AB /* VisitModel.swift */,
 			);
 			path = counselor_assistant;
 			sourceTree = "<group>";
@@ -459,10 +469,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDF5ADC270954C5004967AB /* Visit.swift in Sources */,
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
 				1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */,
 				1CEA4F1E26FCFAC700EB4385 /* AccountViewController.swift in Sources */,
 				1CB4867226F8EE1000A4D469 /* SceneDelegate.swift in Sources */,
+				1CDF5AE027095853004967AB /* VisitModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +484,8 @@
 			files = (
 				1CEA4F1F26FCFAC700EB4385 /* AccountViewController.swift in Sources */,
 				1CB4868726F8EE1000A4D469 /* counselor_assistantTests.swift in Sources */,
+				1CDF5ADD270954C5004967AB /* Visit.swift in Sources */,
+				1CDF5AE127095853004967AB /* VisitModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +495,8 @@
 			files = (
 				1CEA4F2026FCFAC700EB4385 /* AccountViewController.swift in Sources */,
 				1CB4869226F8EE1100A4D469 /* counselor_assistantUITests.swift in Sources */,
+				1CDF5ADE270954C5004967AB /* Visit.swift in Sources */,
+				1CDF5AE227095853004967AB /* VisitModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

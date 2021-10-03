@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         ]
         authUI?.providers = providers
         
+        VisitModel.shared.addNewVisit(visit: Visit())
+        
         
         return true
     }
