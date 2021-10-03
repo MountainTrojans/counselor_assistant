@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzt-oM-zNh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzt-oM-zNh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G68-Un-o7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="-601"/>
+            <point key="canvasLocation" x="945" y="-676"/>
         </scene>
         <!--My Account-->
         <scene sceneID="z8a-Yq-xeH">
@@ -87,12 +88,12 @@
                     <navigationItem key="navigationItem" title="My Account" id="dRh-XW-gs2"/>
                     <connections>
                         <outlet property="signInButton" destination="hKo-Kn-cZ3" id="gk0-No-zYx"/>
-                        <segue destination="dpJ-sN-Zn9" kind="presentation" identifier="staffLogin" modalPresentationStyle="fullScreen" id="5bS-Ia-WQ6"/>
+                        <segue destination="dpJ-sN-Zn9" kind="presentation" identifier="staffLogin" modalPresentationStyle="currentContext" id="5bS-Ia-WQ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgp-Xl-A6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="797"/>
+            <point key="canvasLocation" x="2016" y="856"/>
         </scene>
         <!--StaffSetting-->
         <scene sceneID="iEs-MZ-H4U">
@@ -124,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUh-GL-BfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2834.7826086956525" y="511.60714285714283"/>
+            <point key="canvasLocation" x="3065" y="856"/>
         </scene>
         <!--Account-->
         <scene sceneID="A64-uG-gxh">
@@ -143,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjf-d0-O7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="797"/>
+            <point key="canvasLocation" x="945" y="857"/>
         </scene>
     </scenes>
     <resources>
