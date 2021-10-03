@@ -6,8 +6,9 @@ target 'counselor_assistant' do
   use_frameworks!
 
   # Pods for counselor_assistant
-  pod 'FirebaseUI', '~> 8.0'       # Pull in all Firebase UI features
 
+  pod 'GoogleSignIn'
+  pod 'FirebaseUI', '~> 8.0'       # Pull in all Firebase UI features
   target 'counselor_assistantTests' do
     inherit! :search_paths
     # Pods for testing

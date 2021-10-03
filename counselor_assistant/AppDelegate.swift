@@ -8,13 +8,15 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import GoogleSignIn
 
+@UIApplicationMain
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate ,GIDSignInDelegate{
+// [END appdelegate_interfaces]
+    
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -29,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         
         VisitModel.shared.addNewVisit(visit: Visit())
         
+
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = "720338471147-mce791qsaq6fjtja3nnrio4pkl3kt9or.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
         
         return true
     }
@@ -38,10 +44,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
       if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
         return true
+      } else{
+          return GIDSignIn.sharedInstance().handle(url)
       }
       // other URL handling goes here.
       return false
     }
+
+    
+    
+    // [START signin_handler]
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+      if let error = error {
+        if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+          print("The user has not signed in before or they have since signed out.")
+        } else {
+          print("\(error.localizedDescription)")
+        }
+        // [START_EXCLUDE silent]
+        NotificationCenter.default.post(
+          name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
+        // [END_EXCLUDE]
+        return
+      }
+      // Perform any operations on signed in user here.
+        let email = user.profile.email
+        AccountModel.sharedInstance.validateEmail(email: email ?? "@")
+        
+      
+      // [START_EXCLUDE]
+      NotificationCenter.default.post(
+        name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+        object: nil,
+        userInfo: ["statusText": "Signed in user:\n\(email!)"])
+      // [END_EXCLUDE]
+    }
+    // [END signin_handler]
+    
+    // [START disconnect_handler]
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+      // Perform any operations when the user disconnects from app here.
+      // [START_EXCLUDE]
+      NotificationCenter.default.post(
+        name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+        object: nil,
+        userInfo: ["statusText": "User has disconnected."])
+      // [END_EXCLUDE]
+    }
+    // [END disconnect_handler]
+  }
+
 
     // MARK: UISceneSession Lifecycle
 
@@ -58,5 +112,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
     }
 
 
-}
 
