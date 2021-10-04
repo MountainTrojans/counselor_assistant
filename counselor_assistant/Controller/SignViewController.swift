@@ -50,6 +50,13 @@ class SignViewController: UIViewController {
             performSegue(withIdentifier: "staffLogin", sender: self)
             VisitModel.shared.loadExistingInfo();
         } else{
+            let respAlert = UIAlertController(title: "Error",
+            message: "Please use mountain counselor gmail account!",
+            preferredStyle: .alert)
+            let AnotherOkAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            respAlert.addAction(AnotherOkAction)
+            self.present(respAlert, animated: true, completion: nil)
+            
             GIDSignIn.sharedInstance().signOut()
         }
         
