@@ -63,6 +63,134 @@ class VisitModel
                 }
             }
     }
+    
+    func addNewBillableCode(name: String){
+        let randomID = UUID.init().uuidString
+        db.collection("BillableCode").document(randomID).setData([
+            "billableCodeName": name
+        ]) { (error) in
+                if error != nil{
+                    print("Error in AddNewBillableCode")
+                }
+            }
+    }
+        
+    func loadBillableCode() -> [String] {
+        var billableCode = [String]()
+        let billableCodeRef = db.collection("BillableCode")
+        billableCodeRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                if let actualquery = querySnapshot{
+                    if !actualquery.isEmpty{
+                        for document in querySnapshot!.documents {
+                            let billableCodeObj = document.data() as? [String: AnyObject]
+                            let name = billableCodeObj?["billableCodeName"]
+                            billableCode.append(name as! String)
+                        }
+                    }
+                }
+            }
+        }
+        return billableCode
+    }
+    
+    func addNewNonBillableCode(name: String){
+        let randomID = UUID.init().uuidString
+        db.collection("NonBillableCode").document(randomID).setData([
+            "nonBillableCodeName": name
+        ]) { (error) in
+                if error != nil{
+                    print("Error in AddNewNonBillableCode")
+                }
+            }
+    }
+        
+    func loadNonBillableCode() -> [String] {
+        var nonBillableCode = [String]()
+        let nonBillableCodeRef = db.collection("NonBillableCode")
+        nonBillableCodeRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                if let actualquery = querySnapshot{
+                    if !actualquery.isEmpty{
+                        for document in querySnapshot!.documents {
+                            let nonBillableCodeObj = document.data() as? [String: AnyObject]
+                            let name = nonBillableCodeObj?["nonBillableCodeName"]
+                            nonBillableCode.append(name as! String)
+                        }
+                    }
+                }
+            }
+        }
+        return nonBillableCode
+    }
+    
+    func addNewProgram(name: String){
+        let randomID = UUID.init().uuidString
+        db.collection("Program").document(randomID).setData([
+            "programName": name
+        ]) { (error) in
+                if error != nil{
+                    print("Error in AddNewNonBillableCode")
+                }
+            }
+    }
+        
+    func loadProgram() -> [String] {
+        var program = [String]()
+        let programRef = db.collection("Program")
+        programRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                if let actualquery = querySnapshot{
+                    if !actualquery.isEmpty{
+                        for document in querySnapshot!.documents {
+                            let programObj = document.data() as? [String: AnyObject]
+                            let name = programObj?["programName"]
+                            program.append(name as! String)
+                        }
+                    }
+                }
+            }
+        }
+        return program
+    }
+    
+    func addNewAdmin(email: String){
+        let randomID = UUID.init().uuidString
+        db.collection("Admin").document(randomID).setData([
+            "adminEmail": email
+        ]) { (error) in
+                if error != nil{
+                    print("Error in AddNewNonBillableCode")
+                }
+            }
+    }
+        
+    func isAdmin() -> Bool {
+        var admin = [String]()
+        let adminRef = db.collection("Admin")
+        adminRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                if let actualquery = querySnapshot{
+                    if !actualquery.isEmpty{
+                        for document in querySnapshot!.documents {
+                            let adminObj = document.data() as? [String: AnyObject]
+                            let email = adminObj?["adminEmail"]
+                            admin.append(email as! String)
+                        }
+                    }
+                }
+            }
+        }
+        return admin.contains(username)
+    }
 
     
 }
