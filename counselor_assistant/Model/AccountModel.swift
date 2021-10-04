@@ -35,6 +35,7 @@ class AccountModel:NSObject{
             return true
         }
         return false
+        
     }
     
 }

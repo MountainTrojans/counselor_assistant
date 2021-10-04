@@ -39,15 +39,12 @@ class VisitModel
                 }
             }
         }
-        
-
-        
     }
     
     func addNewVisit(visit: Visit) {
         visits.append(visit)
         let randomID = UUID.init().uuidString
-        db.collection(username).document(randomID).setData([
+        db.collection("VisitHistory_"+username).document(randomID).setData([
             "billableCodeSelection": visit.billableCodeSelection,
             "programSelection":visit.programSelection,
             "nonBillableCodeSelection":visit.nonBillableCodeSelection,
@@ -65,9 +62,7 @@ class VisitModel
                 
                 }
             }
-        
-        
     }
-    
+
     
 }
