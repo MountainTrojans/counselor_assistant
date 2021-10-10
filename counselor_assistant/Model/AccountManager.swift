@@ -41,12 +41,9 @@ class AccountManager {
     
     
     func registerMyAccount(account: AccountModel){
-        
         guard let gmail = account.gmail else {
             return
         }
-        
-        
         let docRef = db.collection("Accounts").document(gmail)
         docRef.getDocument { (document, error) in
             
@@ -56,22 +53,26 @@ class AccountManager {
                 print(self.myAccount.isAdmin)
                 return
             } else {
-                self.db.collection("Accounts").document(gmail).setData([
-                    "gmail": gmail,
-                    "isAdmin": account.isAdmin,
-                    "isSigned": account.isSigned,
-                ]) { (error) in
-                        if error != nil{
-                            print("Error in AddNewBillableCode")
-                        }
-                    }
+                self.updateAccount(account: account)
             }
         }
         
-        
-        
     }
     
+    private func updateAccount(account: AccountModel) {
+        guard let gmail = account.gmail else {
+            return
+        }
+        self.db.collection("Accounts").document(gmail).setData([
+            "gmail": gmail,
+            "isAdmin": account.isAdmin,
+            "isSigned": account.isSigned,
+        ]) { (error) in
+                if error != nil{
+                    print("Error in AddNewBillableCode")
+                }
+            }
+    }
     
     
 }
