@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C59F1F62712AB330030A93B /* BillableCodeModel.swift */; };
 		1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4866F26F8EE1000A4D469 /* AppDelegate.swift */; };
 		1CB4867226F8EE1000A4D469 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4867126F8EE1000A4D469 /* SceneDelegate.swift */; };
 		1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4867326F8EE1000A4D469 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		16B2EBE82D72238F1DE7868D /* Pods-counselor_assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistant.release.xcconfig"; path = "Target Support Files/Pods-counselor_assistant/Pods-counselor_assistant.release.xcconfig"; sourceTree = "<group>"; };
+		1C59F1F62712AB330030A93B /* BillableCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillableCodeModel.swift; sourceTree = "<group>"; };
 		1CB4866C26F8EE1000A4D469 /* counselor_assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counselor_assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB4866F26F8EE1000A4D469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CB4867126F8EE1000A4D469 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				1CDF5ADB270954C5004967AB /* Visit.swift */,
 				1CDF5ADF27095853004967AB /* VisitModel.swift */,
 				529E6CB72709678E00BE8D07 /* AccountModel.swift */,
+				1C59F1F62712AB330030A93B /* BillableCodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CDF5ADC270954C5004967AB /* Visit.swift in Sources */,
+				1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */,
 				529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */,
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
 				529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */,
