@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 class VisitModel
 {

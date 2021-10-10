@@ -48,6 +48,10 @@ class SignViewController: UIViewController {
         let email = (GIDSignIn.sharedInstance()?.currentUser?.profile.email)!
         if(AccountModel.sharedInstance.validateEmail(email: email)){
             performSegue(withIdentifier: "staffLogin", sender: self)
+            
+            AccountModel.sharedInstance.gmail = email
+            
+            AccountManager.sharedInstance.registerMyAccount(account: AccountModel.sharedInstance)
             VisitModel.shared.loadExistingInfo();
         } else{
             let respAlert = UIAlertController(title: "Error",
