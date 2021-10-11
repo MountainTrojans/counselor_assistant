@@ -51,7 +51,7 @@ class SignViewController: UIViewController {
             
             AccountModel.sharedInstance.gmail = email
             
-            AccountManager.sharedInstance.registerMyAccount(account: AccountModel.sharedInstance)
+            AccountManager.registerMyAccount(account: AccountModel.sharedInstance)
             
             VisitModel.shared.loadExistingInfo();
             

@@ -12,12 +12,28 @@ import FirebaseFirestore
 
 
 class AccountManager {
-    private var myAccount = AccountModel.sharedInstance
-    static let sharedInstance = AccountManager();
-    let db = Firestore.firestore();
+    private static var myAccount = AccountModel.sharedInstance
+    static let db = Firestore.firestore();
     
-    func setUserAdminPriveledge(gmail: String, priviledge: Bool) {
-        self.db.collection("Accounts").document(gmail).setData([
+    static func isAdmin(gmail: String) -> Bool {
+
+        let docRef = AccountManager.db.collection("Accounts").document(gmail)
+        var result = false
+        docRef.getDocument { (document, error) in
+
+            if let document = document, document.exists {
+                let accountObj = document.data() as [String: AnyObject]?
+                if ((accountObj?["isAdmin"] as! NSNumber) != 0) {
+                    result = true
+                }
+            }
+        }
+
+        return result
+    }
+    
+    static func setUserAdminPriveledge(gmail: String, priviledge: Bool) {
+        AccountManager.db.collection("Accounts").document(gmail).setData([
             "gmail": gmail,
             "isAdmin": priviledge
         ]) { (error) in
@@ -28,30 +44,30 @@ class AccountManager {
     }
     
     
-    func registerMyAccount(account: AccountModel){
+    static func registerMyAccount(account: AccountModel){
         guard let gmail = account.gmail else {
             return
         }
-        let docRef = db.collection("Accounts").document(gmail)
+        let docRef = AccountManager.db.collection("Accounts").document(gmail)
         docRef.getDocument { (document, error) in
             
             if let document = document, document.exists {
                 let accountObj = document.data() as [String: AnyObject]?
-                self.myAccount.isAdmin = (accountObj?["isAdmin"] as! NSNumber) != 0
-                print(self.myAccount.isAdmin)
+                AccountManager.myAccount.isAdmin = (accountObj?["isAdmin"] as! NSNumber) != 0
+                print(AccountManager.myAccount.isAdmin)
                 return
             } else {
-                self.updateAccount(account: account)
+                AccountManager.updateAccount(account: account)
             }
         }
         
     }
     
-    private func updateAccount(account: AccountModel) {
+    private static func updateAccount(account: AccountModel) {
         guard let gmail = account.gmail else {
             return
         }
-        self.db.collection("Accounts").document(gmail).setData([
+        AccountManager.db.collection("Accounts").document(gmail).setData([
             "gmail": gmail,
             "isAdmin": account.isAdmin
         ]) { (error) in
