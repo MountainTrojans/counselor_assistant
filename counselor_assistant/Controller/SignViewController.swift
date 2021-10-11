@@ -5,8 +5,22 @@
 import UIKit
 import GoogleSignIn
 
+protocol MyDelegate{
+     func didFetchData(data: Bool)
+}
+
 // [START viewcontroller_interfaces]
-class SignViewController: UIViewController {
+class SignViewController: UIViewController, MyDelegate {
+    func didFetchData(data: Bool) {
+        if data {
+            performSegue(withIdentifier: "AdminLogin", sender: self)
+            
+        } else{
+            performSegue(withIdentifier: "StaffLogin", sender: self)
+        }
+        
+    }
+    
   // [END viewcontroller_interfaces]
   // [START viewcontroller_vars]
 
@@ -52,12 +66,7 @@ class SignViewController: UIViewController {
             
             //AccountManager.sharedInstance.registerMyAccount(email:email)
             
-            if (AccountManager.isAdmin(gmail:email)){
-                performSegue(withIdentifier: "AdminLogin", sender: self)
-                
-            } else{
-                performSegue(withIdentifier: "StaffLogin", sender: self)
-            }
+            AccountManager.isAdmin(gmail:email, vc: self)
             
             VisitModel.shared.loadExistingInfo();
             

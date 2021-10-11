@@ -13,24 +13,27 @@ import FirebaseFirestore
 
 class AccountManager {
     private static var myAccount = AccountModel.sharedInstance
-    static let db = Firestore.firestore();
+    static let db = Firestore.firestore()
     
-    static func isAdmin(gmail: String) -> Bool {
+    
+    static func isAdmin(gmail: String, vc: SignViewController) {
 
         let docRef = AccountManager.db.collection("Accounts").document(gmail)
-        var result = false
+
         docRef.getDocument { (document, error) in
 
             if let document = document, document.exists {
                 let accountObj = document.data() as [String: AnyObject]?
                 if ((accountObj?["isAdmin"] as! NSNumber) != 0) {
-                    result = true
-                    
+                    vc.didFetchData(data: true)
+                } else {
+                    vc.didFetchData(data: false)
                 }
+                
             }
+            
         }
 
-        return result
     }
     
     static func setUserAdminPriveledge(gmail: String, priviledge: Bool) {
