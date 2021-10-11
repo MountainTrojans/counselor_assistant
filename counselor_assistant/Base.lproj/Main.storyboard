@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzt-oM-zNh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzt-oM-zNh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +46,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="x5v-cv-GtT">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x5v-cv-GtT" id="AtY-1B-u8i">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -53,7 +54,7 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Zw5-ec-V7g">
-                                                <rect key="frame" x="0.0" y="68" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zw5-ec-V7g" id="6sF-ZY-PP6">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -61,7 +62,7 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yr4-ac-cQx">
-                                                <rect key="frame" x="0.0" y="111.5" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="131.5" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yr4-ac-cQx" id="q7G-uG-7CF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -69,7 +70,7 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hNI-AV-mSf">
-                                                <rect key="frame" x="0.0" y="155" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="175" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hNI-AV-mSf" id="Cuh-pJ-81Y">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -77,7 +78,7 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kue-f4-Avv">
-                                                <rect key="frame" x="0.0" y="198.5" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="218.5" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kue-f4-Avv" id="84b-Oc-OJC">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -85,7 +86,7 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5Rf-Tw-Ib4">
-                                                <rect key="frame" x="0.0" y="242" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="262" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Rf-Tw-Ib4" id="Yg6-GV-IyA">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -242,12 +243,13 @@
                     <navigationItem key="navigationItem" title="Sign In" id="dRh-XW-gs2"/>
                     <connections>
                         <outlet property="signInButton" destination="hKo-Kn-cZ3" id="gk0-No-zYx"/>
-                        <segue destination="dpJ-sN-Zn9" kind="presentation" identifier="staffLogin" modalPresentationStyle="currentContext" id="5bS-Ia-WQ6"/>
+                        <segue destination="dpJ-sN-Zn9" kind="presentation" identifier="StaffLogin" modalPresentationStyle="currentContext" id="5bS-Ia-WQ6"/>
+                        <segue destination="RII-w4-ZQA" kind="presentation" identifier="AdminLogin" modalPresentationStyle="currentContext" id="aQH-8h-EnF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgp-Xl-A6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989.8550724637682" y="855.80357142857144"/>
+            <point key="canvasLocation" x="1784" y="856"/>
         </scene>
         <!--StaffSetting-->
         <scene sceneID="iEs-MZ-H4U">
@@ -279,7 +281,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUh-GL-BfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3065" y="856"/>
+            <point key="canvasLocation" x="2841" y="856"/>
+        </scene>
+        <!--Admin View Controller-->
+        <scene sceneID="bIC-rS-sEF">
+            <objects>
+                <exit id="hWQ-tn-4Jd" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kL7-Tc-Xhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="RII-w4-ZQA" customClass="AdminViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wM8-IM-C2g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XU-ng-R63">
+                                <rect key="frame" x="33" y="86" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLU-2J-Et6">
+                                <rect key="frame" x="33" y="155" width="228" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Admin"/>
+                                <connections>
+                                    <action selector="addAdminBtn:" destination="hWQ-tn-4Jd" eventType="touchUpInside" id="47o-9f-Qq9"/>
+                                    <action selector="clickAddAdminBtn:" destination="RII-w4-ZQA" eventType="touchUpInside" id="ri0-Bw-b1m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kA1-bA-M9Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="addAdminBtn" destination="eLU-2J-Et6" id="t4x-fh-MMN"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2840.579710144928" y="1601.7857142857142"/>
         </scene>
         <!--Account-->
         <scene sceneID="A64-uG-gxh">

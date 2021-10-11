@@ -47,9 +47,15 @@ class SignViewController: UIViewController {
     if let _ = GIDSignIn.sharedInstance()?.currentUser?.authentication {
         let email = (GIDSignIn.sharedInstance()?.currentUser?.profile.email)!
         if(AccountModel.sharedInstance.validateEmail(email: email)){
-            performSegue(withIdentifier: "staffLogin", sender: self)
             
             AccountModel.sharedInstance.gmail = email
+            
+            if (AccountManager.isAdmin(email)){
+                performSegue(withIdentifier: "StaffLogin", sender: self)
+                
+            } else{
+                performSegue(withIdentifier: "AdminLogin", sender: self)
+            }
             
             AccountManager.sharedInstance.registerMyAccount(account: AccountModel.sharedInstance)
             VisitModel.shared.loadExistingInfo();
@@ -73,10 +79,6 @@ class SignViewController: UIViewController {
 //    }
   }
   // [END toggle_auth]
-    
-    func jumpStaff(){
-        performSegue(withIdentifier: "staffLogin", sender: self)
-    }
 
     
   override var preferredStatusBarStyle: UIStatusBarStyle {
