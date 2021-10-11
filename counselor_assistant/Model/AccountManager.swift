@@ -13,30 +13,18 @@ import FirebaseFirestore
 
 class AccountManager {
     private var myAccount = AccountModel.sharedInstance
-    private var existingAccountEmails = Set<String>()
     static let sharedInstance = AccountManager();
     let db = Firestore.firestore();
     
-    private func loadAccounts()  {
-        let accountRef = db.collection("Accounts")
-        accountRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                if let actualquery = querySnapshot{
-                    if !actualquery.isEmpty{
-                        for document in querySnapshot!.documents {
-                            let accountObj = document.data() as [String: AnyObject]
-                            guard let gmail = (accountObj["gmail"] as? String) else {
-                                continue
-                            }
-                            self.existingAccountEmails.insert(gmail)
-                        }
-                    }
+    func setUserAdminPriveledge(gmail: String, priviledge: Bool) {
+        self.db.collection("Accounts").document(gmail).setData([
+            "gmail": gmail,
+            "isAdmin": priviledge
+        ]) { (error) in
+                if error != nil{
+                    print("Error in Account")
                 }
             }
-        }
-        
     }
     
     
@@ -65,11 +53,10 @@ class AccountManager {
         }
         self.db.collection("Accounts").document(gmail).setData([
             "gmail": gmail,
-            "isAdmin": account.isAdmin,
-            "isSigned": account.isSigned,
+            "isAdmin": account.isAdmin
         ]) { (error) in
                 if error != nil{
-                    print("Error in AddNewBillableCode")
+                    print("Error in Account")
                 }
             }
     }
