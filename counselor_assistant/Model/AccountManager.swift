@@ -25,6 +25,7 @@ class AccountManager {
                 let accountObj = document.data() as [String: AnyObject]?
                 if ((accountObj?["isAdmin"] as! NSNumber) != 0) {
                     result = true
+                    
                 }
             }
         }

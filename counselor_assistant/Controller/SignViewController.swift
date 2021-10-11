@@ -50,13 +50,13 @@ class SignViewController: UIViewController {
             
             AccountModel.sharedInstance.gmail = email
             
-            AccountManager.sharedInstance.registerMyAccount(email:email)
+            //AccountManager.sharedInstance.registerMyAccount(email:email)
             
-            if (AccountManager.isAdmin(email:email)){
-                performSegue(withIdentifier: "StaffLogin", sender: self)
+            if (AccountManager.isAdmin(gmail:email)){
+                performSegue(withIdentifier: "AdminLogin", sender: self)
                 
             } else{
-                performSegue(withIdentifier: "AdminLogin", sender: self)
+                performSegue(withIdentifier: "StaffLogin", sender: self)
             }
             
             VisitModel.shared.loadExistingInfo();
