@@ -5,12 +5,9 @@
 import UIKit
 import GoogleSignIn
 
-protocol MyDelegate{
-     func didFetchData(data: Bool)
-}
 
 // [START viewcontroller_interfaces]
-class SignViewController: UIViewController, MyDelegate {
+class SignViewController: UIViewController, AdminSignInDelegate {
     func didFetchData(data: Bool) {
         if data {
             performSegue(withIdentifier: "AdminLogin", sender: self)
@@ -66,7 +63,7 @@ class SignViewController: UIViewController, MyDelegate {
             
             //AccountManager.sharedInstance.registerMyAccount(email:email)
             
-            AccountManager.isAdmin(gmail:email, vc: self)
+            AccountManager.loginAccordingToPriveledge(gmail:email, vc: self)
             
             VisitModel.shared.loadExistingInfo();
             

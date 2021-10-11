@@ -9,9 +9,11 @@ import Foundation
 import FirebaseAuth
 import Firebase
 
+protocol codeAcquiredDelegate {
+    func didFetchCode(data: [String]);
+}
+
 class BillableCodeModel {
-    
-    
     static func addNewBillableCode(name: String){
         let db = Firestore.firestore();
         let randomID = UUID.init().uuidString
@@ -25,9 +27,9 @@ class BillableCodeModel {
     }
     
         
-    static func getBillableCode() -> [String] {
+    static func getBillableCode(vc: codeAcquiredDelegate) {
         let db = Firestore.firestore();
-        var billableCode = [String]()
+        var billableCodes = [String]()
         let billableCodeRef = db.collection("BillableCode")
         billableCodeRef.getDocuments { (querySnapshot, err) in
             if let err = err {
@@ -38,13 +40,14 @@ class BillableCodeModel {
                         for document in querySnapshot!.documents {
                             let billableCodeObj = document.data() as? [String: AnyObject]
                             let name = billableCodeObj?["billableCodeName"]
-                            billableCode.append(name as! String)
+                            billableCodes.append(name as! String)
                         }
+                        vc.didFetchCode(data: billableCodes)
                     }
                 }
             }
         }
-        return billableCode
+        
     }
     
     func addNewNonBillableCode(name: String){
@@ -60,9 +63,9 @@ class BillableCodeModel {
     }
     
         
-    func getNonBillableCode() -> [String] {
+    func getNonBillableCode(vc: codeAcquiredDelegate) {
         let db = Firestore.firestore();
-        var nonBillableCode = [String]()
+        var nonBillableCodes = [String]()
         let nonBillableCodeRef = db.collection("NonBillableCode")
         nonBillableCodeRef.getDocuments { (querySnapshot, err) in
             if let err = err {
@@ -73,13 +76,14 @@ class BillableCodeModel {
                         for document in querySnapshot!.documents {
                             let nonBillableCodeObj = document.data() as? [String: AnyObject]
                             let name = nonBillableCodeObj?["nonBillableCodeName"]
-                            nonBillableCode.append(name as! String)
+                            nonBillableCodes.append(name as! String)
                         }
+                        vc.didFetchCode(data: nonBillableCodes)
                     }
                 }
             }
         }
-        return nonBillableCode
+        
     }
     
 }

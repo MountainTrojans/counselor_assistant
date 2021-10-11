@@ -10,13 +10,17 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
+protocol AdminSignInDelegate{
+     func didFetchData(data: Bool)
+}
+
 
 class AccountManager {
     private static var myAccount = AccountModel.sharedInstance
     static let db = Firestore.firestore()
     
     
-    static func isAdmin(gmail: String, vc: SignViewController) {
+    static func loginAccordingToPriveledge(gmail: String, vc: AdminSignInDelegate) {
 
         let docRef = AccountManager.db.collection("Accounts").document(gmail)
 
