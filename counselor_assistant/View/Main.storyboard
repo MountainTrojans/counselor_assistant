@@ -286,8 +286,6 @@
         <!--Admin View Controller-->
         <scene sceneID="bIC-rS-sEF">
             <objects>
-                <exit id="hWQ-tn-4Jd" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kL7-Tc-Xhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="RII-w4-ZQA" customClass="AdminViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wM8-IM-C2g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -318,6 +316,8 @@
                         <outlet property="addAdminBtn" destination="eLU-2J-Et6" id="t4x-fh-MMN"/>
                     </connections>
                 </viewController>
+                <exit id="hWQ-tn-4Jd" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kL7-Tc-Xhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2840.579710144928" y="1601.7857142857142"/>
         </scene>
