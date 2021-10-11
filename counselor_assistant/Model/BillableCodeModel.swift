@@ -10,14 +10,10 @@ import FirebaseAuth
 import Firebase
 
 class BillableCodeModel {
-    public var billableCodes: Array<String> = Array<String>()
-    public var nonbillableCodes: Array<String> = Array<String>()
-    static let shared = BillableCodeModel();
-    static let accountModel = AccountModel.sharedInstance
     
-    let db = Firestore.firestore();
     
-    func addNewBillableCode(name: String){
+    static func addNewBillableCode(name: String){
+        let db = Firestore.firestore();
         let randomID = UUID.init().uuidString
         db.collection("BillableCode").document(randomID).setData([
             "billableCodeName": name
@@ -28,11 +24,9 @@ class BillableCodeModel {
             }
     }
     
-    func loadBillableCode() {
-        billableCodes = getBillableCode();
-    }
         
-    private func getBillableCode() -> [String] {
+    static func getBillableCode() -> [String] {
+        let db = Firestore.firestore();
         var billableCode = [String]()
         let billableCodeRef = db.collection("BillableCode")
         billableCodeRef.getDocuments { (querySnapshot, err) in
@@ -54,6 +48,7 @@ class BillableCodeModel {
     }
     
     func addNewNonBillableCode(name: String){
+        let db = Firestore.firestore();
         let randomID = UUID.init().uuidString
         db.collection("NonBillableCode").document(randomID).setData([
             "nonBillableCodeName": name
@@ -64,11 +59,9 @@ class BillableCodeModel {
             }
     }
     
-    func loadNonBillableCode() {
-        nonbillableCodes = getNonBillableCode();
-    }
         
-    private func getNonBillableCode() -> [String] {
+    func getNonBillableCode() -> [String] {
+        let db = Firestore.firestore();
         var nonBillableCode = [String]()
         let nonBillableCodeRef = db.collection("NonBillableCode")
         nonBillableCodeRef.getDocuments { (querySnapshot, err) in

@@ -52,7 +52,9 @@ class SignViewController: UIViewController {
             AccountModel.sharedInstance.gmail = email
             
             AccountManager.sharedInstance.registerMyAccount(account: AccountModel.sharedInstance)
+            
             VisitModel.shared.loadExistingInfo();
+            
         } else{
             let respAlert = UIAlertController(title: "Error",
             message: "Please use mountain counselor gmail account!",

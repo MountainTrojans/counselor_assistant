@@ -135,12 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */,
+				1CB4867126F8EE1000A4D469 /* SceneDelegate.swift */,
 				1CB4866F26F8EE1000A4D469 /* AppDelegate.swift */,
 				529E6CB22709392500BE8D07 /* Model */,
 				529E6CB42709393600BE8D07 /* Controller */,
 				529E6CB32709392F00BE8D07 /* View */,
-				1CB4867126F8EE1000A4D469 /* SceneDelegate.swift */,
-				1CB4867526F8EE1000A4D469 /* Main.storyboard */,
 				1CB4867826F8EE1000A4D469 /* Assets.xcassets */,
 				1CB4867A26F8EE1000A4D469 /* LaunchScreen.storyboard */,
 				1CB4867D26F8EE1000A4D469 /* Info.plist */,
@@ -194,6 +193,7 @@
 		529E6CB32709392F00BE8D07 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1CB4867526F8EE1000A4D469 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
