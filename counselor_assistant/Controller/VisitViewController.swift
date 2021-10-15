@@ -7,14 +7,15 @@
 
 import UIKit
 
-class VisitViewController: UIViewController {
-
-    @IBOutlet weak var visitTableView: UITableView!
+class VisitViewController: UIViewController, UITableViewDelegate {
     
+    @IBOutlet weak var visitTableViews: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        visitTableView.dataSource = self
+//        self.tableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        visitTableViews.delegate = self
+        visitTableViews.dataSource = self
+      //  VisitModel.shared.loadExistingInfo()
         // Do any additional setup after loading the view.
     }
     /*
@@ -30,15 +31,15 @@ class VisitViewController: UIViewController {
 
 extension VisitViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        VisitModel.shared.loadExistingInfo()
+       VisitModel.shared.loadExistingInfo()
+        print("Shared Count" + String(VisitModel.shared.visits.count))
         return VisitModel.shared.visits.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = visitTableView.dequeueReusableCell(withIdentifier: "visitCell") as!
- VisitTableViewCell
+        let cell = visitTableViews.dequeueReusableCell(withIdentifier: "visitCell") as! VisitTableViewCell
         let visit = VisitModel.shared.visits[indexPath.row]
-        cell.visitLbl.text = visit.clientInitials ?? nil
+        cell.labelView.text = visit.clientInitials ?? nil
         return cell
     }
 }

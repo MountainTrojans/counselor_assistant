@@ -43,9 +43,9 @@ class newVisitController: UIViewController, codeAcquiredDelegate {
         let notewritten:Bool? = Bool(noteWritten.text!)
         let noteapproved: Bool? = Bool(noteApproved.text!)
         let cdi:Bool? = Bool(CDI.text!)
-        
-            
-        
+
+
+
         let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
         VisitModel.shared.addNewVisit(visit: visit)
     }
