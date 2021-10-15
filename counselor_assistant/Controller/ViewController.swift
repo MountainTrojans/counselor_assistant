@@ -13,6 +13,7 @@ class ViewController: UIViewController{ //UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
     
  
@@ -20,7 +21,8 @@ class ViewController: UIViewController{ //UITableViewDelegate, UITableViewDataSo
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-//        let visit = currentUser.getVisit()
+        let visit = VisitModel.shared
+        
 //        //print("CURRENT WATCHLIST AMOUNT: \(currentWatchlist?.getStockList().count)")
 //
 //        let currentStockList = currentWatchlist?.getStockList()
