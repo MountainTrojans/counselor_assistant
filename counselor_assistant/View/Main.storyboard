@@ -14,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="visit_vc" id="BYZ-38-t0r" customClass="VisitViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="VisitViewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -100,12 +100,12 @@
                             <constraint firstItem="mX2-fH-bBd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qa6-mA-ADz"/>
                             <constraint firstItem="mX2-fH-bBd" firstAttribute="top" secondItem="6tX-0Q-wS0" secondAttribute="bottom" id="ugH-Mh-I3X"/>
                         </constraints>
-                        <connections>
-                            <outlet property="visitTableView" destination="pPx-UD-beP" id="l2g-09-ESt"/>
-                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Visit" image="line.horizontal.3.decrease.circle.fill" catalog="system" id="E1Q-X5-foq"/>
                     <navigationItem key="navigationItem" id="Pou-XB-Owd"/>
+                    <connections>
+                        <outlet property="visitTableView" destination="pPx-UD-beP" id="dX1-h8-u7C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
