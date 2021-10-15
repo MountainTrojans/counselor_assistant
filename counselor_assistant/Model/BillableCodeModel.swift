@@ -38,8 +38,8 @@ class BillableCodeModel {
                 if let actualquery = querySnapshot{
                     if !actualquery.isEmpty{
                         for document in querySnapshot!.documents {
-                            let billableCodeObj = document.data() as? [String: AnyObject]
-                            let name = billableCodeObj?["billableCodeName"]
+                            let billableCodeObj = document.data() as [String: AnyObject]
+                            let name = billableCodeObj["billableCodeName"]
                             billableCodes.append(name as! String)
                         }
                         vc.didFetchCode(data: billableCodes)
@@ -74,8 +74,8 @@ class BillableCodeModel {
                 if let actualquery = querySnapshot{
                     if !actualquery.isEmpty{
                         for document in querySnapshot!.documents {
-                            let nonBillableCodeObj = document.data() as? [String: AnyObject]
-                            let name = nonBillableCodeObj?["nonBillableCodeName"]
+                            let nonBillableCodeObj = document.data() as [String: AnyObject]
+                            let name = nonBillableCodeObj["nonBillableCodeName"]
                             nonBillableCodes.append(name as! String)
                         }
                         vc.didFetchCode(data: nonBillableCodes)

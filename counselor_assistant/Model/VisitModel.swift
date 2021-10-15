@@ -31,9 +31,9 @@ class VisitModel
                     {
                         self.visits.removeAll()
                         for document in querySnapshot!.documents {
-                            let visitObj = document.data() as? [String: AnyObject]
+                            let visitObj = document.data() as [String: AnyObject]
                             
-                            self.visits.append(Visit(billableCodeSelection: visitObj?["billableCodeSelection"] as? Int, programSelection: visitObj?["programSelection"] as? Int, nonBillableCodeSelection: visitObj?["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj?["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj?["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj?["serviceMinutes"] as? Double, documentationMinutes: visitObj?["documentationMinutes"] as? Double, noteWritten: visitObj?["noteWritten"] as? Bool, noteApproved: visitObj?["noteApproved"] as? Bool, CDI: visitObj?["CDI"] as? Bool))
+                            self.visits.append(Visit(clientInitials: visitObj["clientInitials"] as? String, billableCodeSelection: visitObj["billableCodeSelection"] as? Int, programSelection: visitObj["programSelection"] as? Int, nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj["serviceMinutes"] as? Double, documentationMinutes: visitObj["documentationMinutes"] as? Double, noteWritten: visitObj["noteWritten"] as? Bool, noteApproved: visitObj["noteApproved"] as? Bool, CDI: visitObj["CDI"] as? Bool))
                             print(self.visits)
                         }
                     }
@@ -43,9 +43,11 @@ class VisitModel
     }
     
     func addNewVisit(visit: Visit) {
+        print("Made it to the add new" + username)
         visits.append(visit)
         let randomID = UUID.init().uuidString
         db.collection("VisitHistory_"+username).document(randomID).setData([
+            "clientInitials":visit.clientInitials,
             "billableCodeSelection": visit.billableCodeSelection,
             "programSelection":visit.programSelection,
             "nonBillableCodeSelection":visit.nonBillableCodeSelection,
