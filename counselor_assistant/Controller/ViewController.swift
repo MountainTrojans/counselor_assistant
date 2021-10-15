@@ -9,7 +9,6 @@
 import UIKit
 class ViewController: UIViewController{ //UITableViewDelegate, UITableViewDataSource{
 
-    @IBOutlet weak var previousVisitsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -62,6 +62,7 @@ class AccountManager {
             if let document = document, document.exists {
                 let accountObj = document.data() as [String: AnyObject]?
                 AccountManager.myAccount.isAdmin = (accountObj?["isAdmin"] as! NSNumber) != 0
+                // Create an empty collection of VisitRecords.
                 print(AccountManager.myAccount.isAdmin)
                 return
             } else {

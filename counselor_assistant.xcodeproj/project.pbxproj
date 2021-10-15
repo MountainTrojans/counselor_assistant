@@ -21,6 +21,8 @@
 		1CEA4F1A26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1B26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1C26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
+		507950A7271A198A00EC4592 /* VisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A6271A198A00EC4592 /* VisitViewController.swift */; };
+		507950A9271A259500EC4592 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A8271A259400EC4592 /* VisitTableViewCell.swift */; };
 		524107F62713FE5F00D6F11E /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524107F52713FE5F00D6F11E /* AdminViewController.swift */; };
 		524107F8271404DD00D6F11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524107F7271404DD00D6F11E /* Main.storyboard */; };
 		529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E6CB5270955C400BE8D07 /* SignViewController.swift */; };
@@ -69,6 +71,8 @@
 		1CDF5ADF27095853004967AB /* VisitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitModel.swift; sourceTree = "<group>"; };
 		1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46057039AB9C79C668994C01 /* Pods-counselor_assistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistantTests.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistantTests/Pods-counselor_assistantTests.debug.xcconfig"; sourceTree = "<group>"; };
+		507950A6271A198A00EC4592 /* VisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitViewController.swift; sourceTree = "<group>"; };
+		507950A8271A259400EC4592 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		524107F52713FE5F00D6F11E /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		524107F7271404DD00D6F11E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		529E6CB5270955C400BE8D07 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			children = (
 				1CB4867326F8EE1000A4D469 /* ViewController.swift */,
 				529E6CB5270955C400BE8D07 /* SignViewController.swift */,
+				507950A6271A198A00EC4592 /* VisitViewController.swift */,
+				507950A8271A259400EC4592 /* VisitTableViewCell.swift */,
 				524107F52713FE5F00D6F11E /* AdminViewController.swift */,
 				A56A189227190AD5007D749F /* newVisitController.swift */,
 			);
@@ -512,6 +518,8 @@
 				1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */,
 				A56A189327190AD5007D749F /* newVisitController.swift in Sources */,
 				1CB4867226F8EE1000A4D469 /* SceneDelegate.swift in Sources */,
+				507950A9271A259500EC4592 /* VisitTableViewCell.swift in Sources */,
+				507950A7271A198A00EC4592 /* VisitViewController.swift in Sources */,
 				1CDF5AE027095853004967AB /* VisitModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

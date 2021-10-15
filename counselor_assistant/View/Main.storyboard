@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kdc-Kw-HDJ">
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzt-oM-zNh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,7 +14,7 @@
         <!--Visit-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="visit_vc" id="BYZ-38-t0r" customClass="ViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="visit_vc" id="BYZ-38-t0r" customClass="VisitViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="VisitViewController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,6 +51,31 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pPx-UD-beP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier=" visitCell" rowHeight="44" id="Kqm-1Q-0Js" customClass="VisitTableViewCell" customModule="counselor_assistant" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kqm-1Q-0Js" id="xeG-jr-aNV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTq-CG-qoK">
+                                                            <rect key="frame" x="30" y="11.5" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ZTq-CG-qoK" firstAttribute="centerY" secondItem="xeG-jr-aNV" secondAttribute="centerY" id="Ney-rr-sDf"/>
+                                                        <constraint firstItem="ZTq-CG-qoK" firstAttribute="leading" secondItem="xeG-jr-aNV" secondAttribute="leadingMargin" constant="10" id="mnp-o2-Xgx"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="visitLbl" destination="ZTq-CG-qoK" id="qlQ-yp-ruF"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -74,16 +101,16 @@
                             <constraint firstItem="mX2-fH-bBd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qa6-mA-ADz"/>
                             <constraint firstItem="mX2-fH-bBd" firstAttribute="top" secondItem="6tX-0Q-wS0" secondAttribute="bottom" id="ugH-Mh-I3X"/>
                         </constraints>
+                        <connections>
+                            <outlet property="visitTableView" destination="pPx-UD-beP" id="l2g-09-ESt"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Visit" image="line.horizontal.3.decrease.circle.fill" catalog="system" id="E1Q-X5-foq"/>
                     <navigationItem key="navigationItem" id="Pou-XB-Owd"/>
-                    <connections>
-                        <outlet property="previousVisitsTableView" destination="pPx-UD-beP" id="ZGe-x7-q1J"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="-698"/>
+            <point key="canvasLocation" x="944.92753623188412" y="-698.4375"/>
         </scene>
         <!--New Visit Controller-->
         <scene sceneID="gQQ-A5-iMZ">

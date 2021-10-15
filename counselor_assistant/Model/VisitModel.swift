@@ -12,12 +12,13 @@ import FirebaseFirestore
 
 class VisitModel
 {
-    public var visits: Array<Visit> = Array<Visit>()
-    static let shared = VisitModel();
-    static let accountModel = AccountModel.sharedInstance
     
-    let db = Firestore.firestore();
-    let username: String = accountModel.gmail ?? "test";
+    static let shared = VisitModel()
+    static let accountModel = AccountModel.sharedInstance
+    public var visits: Array<Visit> = Array<Visit>()
+    
+    let db = Firestore.firestore()
+    let username: String = accountModel.gmail ?? "test"
     
     func loadExistingInfo() {
         let uploadedVideosRef = db.collection(username)
@@ -46,6 +47,7 @@ class VisitModel
         print("Made it to the add new" + username)
         visits.append(visit)
         let randomID = UUID.init().uuidString
+        // db.collection("Account")
         db.collection("VisitHistory_"+username).document(randomID).setData([
             "clientInitials":visit.clientInitials,
             "billableCodeSelection": visit.billableCodeSelection,
