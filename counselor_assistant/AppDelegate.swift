@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate ,GIDSignI
           return GIDSignIn.sharedInstance().handle(url)
       }
       // other URL handling goes here.
-      return false
+  
     }
 
     

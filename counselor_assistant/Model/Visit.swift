@@ -9,7 +9,9 @@ import Foundation
 
 class Visit
 {
-    internal init(billableCodeSelection: Int? = nil, programSelection: Int? = nil, nonBillableCodeSelection: Int? = nil, totalRoundTripMiles: Double? = nil, totalRoundTripMinutes: Double? = nil, serviceMinutes: Double? = nil, documentationMinutes: Double? = nil, noteWritten: Bool? = nil, noteApproved: Bool? = nil, CDI: Bool? = nil) {
+    //need to add the client initials as a parameter to the internal init
+    internal init( clientInitials: String? = nil,billableCodeSelection: Int? = nil, programSelection: Int? = nil, nonBillableCodeSelection: Int? = nil, totalRoundTripMiles: Double? = nil, totalRoundTripMinutes: Double? = nil, serviceMinutes: Double? = nil, documentationMinutes: Double? = nil, noteWritten: Bool? = nil, noteApproved: Bool? = nil, CDI: Bool? = nil) {
+        self.clientInitials = clientInitials
         self.billableCodeSelection = billableCodeSelection
         self.programSelection = programSelection
         self.nonBillableCodeSelection = nonBillableCodeSelection
@@ -21,7 +23,7 @@ class Visit
         self.noteApproved = noteApproved
         self.CDI = CDI
     }
-    
+    var clientInitials: String?;
     var billableCodeSelection: Int?;
     var programSelection: Int?;
     var nonBillableCodeSelection: Int?;

@@ -43,9 +43,11 @@ class VisitModel
     }
     
     func addNewVisit(visit: Visit) {
+        print("Made it to the add new" + username)
         visits.append(visit)
         let randomID = UUID.init().uuidString
         db.collection("VisitHistory_"+username).document(randomID).setData([
+            "clientInitials":visit.clientInitials,
             "billableCodeSelection": visit.billableCodeSelection,
             "programSelection":visit.programSelection,
             "nonBillableCodeSelection":visit.nonBillableCodeSelection,
