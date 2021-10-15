@@ -12,17 +12,12 @@ class newVisitController: UIViewController, codeAcquiredDelegate {
         // do something with data
         
     }
-    //UITableViewDelegate, UITableViewDataSource{
-    
-    
-
+ 
     override func viewDidLoad() {
         BillableCodeModel.getBillableCode(vc: self)
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-
     
     @IBOutlet weak var clientInitials: UITextField!
     @IBOutlet weak var billableCode: UITextField!
@@ -54,26 +49,4 @@ class newVisitController: UIViewController, codeAcquiredDelegate {
         let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
         VisitModel.shared.addNewVisit(visit: visit)
     }
-    //    @IBAction func submitVisitButton(_ sender: UIButton) {
-//        let addbillableCode = billableCode.text
-//        let nonBillableCode = nonBillableCodeSelection.text
-//        let program = programSelection.text
-//        let addmiles = totalRoundTripMiles.text
-//        let addserviceMinutes = serviceMinutes.text
-//        let documentMinutes = documentationMinutes.text
-//        let notewritten = noteWritten.text
-//        let noteapproved = noteApproved.text
-//        let cdi = CDI.text
-//
-//
-//        print( addbillableCode)
-//        print("helllooooo")
-//
-//
-//
-//
-//    }
-    
-    
-    
 }
