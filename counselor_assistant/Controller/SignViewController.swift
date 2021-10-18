@@ -65,7 +65,7 @@ class SignViewController: UIViewController, AdminSignInDelegate {
             
             AccountManager.loginAccordingToPriveledge(gmail:email, vc: self)
             
-            VisitModel.shared.loadExistingInfo();
+            
             
         } else{
             let respAlert = UIAlertController(title: "Error",

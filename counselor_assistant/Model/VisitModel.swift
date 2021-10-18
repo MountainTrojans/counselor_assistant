@@ -10,17 +10,22 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
+protocol visitsAcquiredDelegate {
+    func didFetchVisits(data: [Visit]);
+}
+
+
 class VisitModel
 {
     
     static let shared = VisitModel()
     static let accountModel = AccountModel.sharedInstance
-    public var visits: Array<Visit> = Array<Visit>()
     
-    let db = Firestore.firestore()
-    let username: String = accountModel.gmail ?? "test2"
+    static let db = Firestore.firestore()
+    static let username: String = accountModel.gmail ?? "test2"
     
-    func loadExistingInfo() {
+    static func loadExistingInfo(vc: visitsAcquiredDelegate) {
+        var visits = Array<Visit>();
        
         print("VisitHistory_"+username)
         let uploadedVideosRef = db.collection("VisitHistory_"+username)
@@ -33,14 +38,14 @@ class VisitModel
                     if !actualquery.isEmpty
                     {
                         print("The list is not empty")
-                        self.visits.removeAll()
                         for document in querySnapshot!.documents {
                             let visitObj = document.data() as [String: AnyObject]
                             
-                            self.visits.append(Visit(clientInitials: visitObj["clientInitials"] as? String, billableCodeSelection: visitObj["billableCodeSelection"] as? Int, programSelection: visitObj["programSelection"] as? Int, nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj["serviceMinutes"] as? Double, documentationMinutes: visitObj["documentationMinutes"] as? Double, noteWritten: visitObj["noteWritten"] as? Bool, noteApproved: visitObj["noteApproved"] as? Bool, CDI: visitObj["CDI"] as? Bool))
+                            visits.append(Visit(clientInitials: visitObj["clientInitials"] as? String, billableCodeSelection: visitObj["billableCodeSelection"] as? Int, programSelection: visitObj["programSelection"] as? Int, nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj["serviceMinutes"] as? Double, documentationMinutes: visitObj["documentationMinutes"] as? Double, noteWritten: visitObj["noteWritten"] as? Bool, noteApproved: visitObj["noteApproved"] as? Bool, CDI: visitObj["CDI"] as? Bool))
                     
                         }
                     }
+                    vc.didFetchVisits(data: visits);
                 
                 }
             }
@@ -48,10 +53,9 @@ class VisitModel
     }
     
     func addNewVisit(visit: Visit) {
-        visits.append(visit)
         let randomID = UUID.init().uuidString
         // db.collection("Account")
-        db.collection("VisitHistory_"+username).document(randomID).setData([
+        VisitModel.db.collection("VisitHistory_"+VisitModel.username).document(randomID).setData([
             "clientInitials":visit.clientInitials,
             "billableCodeSelection": visit.billableCodeSelection,
             "programSelection":visit.programSelection,

@@ -7,14 +7,25 @@
 
 import UIKit
 
-class VisitViewController: UIViewController, UITableViewDelegate {
+class VisitViewController: UIViewController, UITableViewDelegate, visitsAcquiredDelegate {
+    func didFetchVisits(data: [Visit]) {
+        visits = data;
+    }
+    
     
     @IBOutlet weak var visitTableViews: UITableView!
+    
+    var visits = Array<Visit>();
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.tableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         visitTableViews.delegate = self
         visitTableViews.dataSource = self
+        
+        VisitModel.loadExistingInfo(vc: self)
       //  VisitModel.shared.loadExistingInfo()
         // Do any additional setup after loading the view.
     }
@@ -31,14 +42,14 @@ class VisitViewController: UIViewController, UITableViewDelegate {
 
 extension VisitViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       VisitModel.shared.loadExistingInfo()
-        print("Shared Count" + String(VisitModel.shared.visits.count))
-        return VisitModel.shared.visits.count
+       
+        print("Shared Count" + String(visits.count))
+        return visits.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = visitTableViews.dequeueReusableCell(withIdentifier: "visitCell") as! VisitTableViewCell
-        let visit = VisitModel.shared.visits[indexPath.row]
+        let visit = visits[indexPath.row]
         cell.labelView.text = visit.clientInitials ?? nil
         return cell
     }
