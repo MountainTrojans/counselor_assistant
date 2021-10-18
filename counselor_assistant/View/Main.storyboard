@@ -35,9 +35,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="New Visit"/>
                                                 <connections>
-                                                    <segue destination="a23-By-A7d" kind="popoverPresentation" popoverAnchorView="dXp-3Q-t7n" id="RtH-Ip-Gkb">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
+                                                    <segue destination="a23-By-A7d" kind="presentation" modalPresentationStyle="formSheet" id="RtH-Ip-Gkb"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -60,6 +58,9 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3V-cv-WOY">
                                                             <rect key="frame" x="10" y="10" width="394" height="170"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="oP1-sQ-7cP"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <color key="highlightedColor" systemColor="quaternarySystemFillColor"/>
@@ -356,43 +357,6 @@
             </objects>
             <point key="canvasLocation" x="945" y="856"/>
         </scene>
-        <!--Admin View Controller-->
-        <scene sceneID="bIC-rS-sEF">
-            <objects>
-                <viewController id="RII-w4-ZQA" customClass="AdminViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wM8-IM-C2g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XU-ng-R63">
-                                <rect key="frame" x="33" y="86" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLU-2J-Et6">
-                                <rect key="frame" x="33" y="155" width="228" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="addAdminBtn:" destination="hWQ-tn-4Jd" eventType="touchUpInside" id="47o-9f-Qq9"/>
-                                    <action selector="clickAddAdminBtn:" destination="RII-w4-ZQA" eventType="touchUpInside" id="ri0-Bw-b1m"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="kA1-bA-M9Z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <outlet property="addAdminBtn" destination="eLU-2J-Et6" id="t4x-fh-MMN"/>
-                    </connections>
-                </viewController>
-                <exit id="hWQ-tn-4Jd" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kL7-Tc-Xhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2190" y="1564"/>
-        </scene>
         <!--Account-->
         <scene sceneID="A64-uG-gxh">
             <objects>
@@ -405,7 +369,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="dpJ-sN-Zn9" kind="presentation" modalPresentationStyle="fullScreen" id="PEu-sY-TmO"/>
+                        <segue destination="dpJ-sN-Zn9" kind="presentation" modalPresentationStyle="currentContext" id="PEu-sY-TmO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjf-d0-O7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

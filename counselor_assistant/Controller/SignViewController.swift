@@ -13,6 +13,9 @@ class SignViewController: UIViewController, AdminSignInDelegate {
             
             performSegue(withIdentifier: "SignIn", sender: self)
             
+            
+            VisitModel.shared.addNewVisit(visit: Visit( clientInitials: "Test",billableCodeSelection: 1, programSelection: 1, nonBillableCodeSelection: 1, totalRoundTripMiles:1, totalRoundTripMinutes: 1, serviceMinutes: 1, documentationMinutes: 1, noteWritten: true, noteApproved: true, CDI: true) )
+            
         } else{
             performSegue(withIdentifier: "StaffLogin", sender: self)
         }

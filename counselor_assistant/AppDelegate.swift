@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate ,GIDSignI
         ]
         authUI?.providers = providers
         
-        VisitModel.shared.addNewVisit(visit: Visit())
+        
         
 
         // Initialize sign-in

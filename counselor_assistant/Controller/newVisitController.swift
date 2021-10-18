@@ -48,5 +48,7 @@ class newVisitController: UIViewController, codeAcquiredDelegate {
 
         let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
         VisitModel.shared.addNewVisit(visit: visit)
+        self.dismiss(animated: true, completion: nil)
+
     }
 }

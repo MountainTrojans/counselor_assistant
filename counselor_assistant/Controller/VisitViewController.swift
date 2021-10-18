@@ -39,12 +39,27 @@ class VisitViewController: UIViewController, UITableViewDelegate, visitsAcquired
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+
+
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print("Shared Count" + String(visits.count))
+//        return visits.count
+//    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = visitTableViews.dequeueReusableCell(withIdentifier: "visitCell") as! VisitTableViewCell
+//        let visit = visits[indexPath.row]
+//        cell.labelView.text = visit.clientInitials ?? nil
+//        return cell
+//    }
+//
 }
 
 extension VisitViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        
+
         print("Shared Count" + String(visits.count))
         return visits.count
     }
