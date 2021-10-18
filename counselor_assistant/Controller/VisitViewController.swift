@@ -9,7 +9,8 @@ import UIKit
 
 class VisitViewController: UIViewController, UITableViewDelegate, visitsAcquiredDelegate {
     func didFetchVisits(data: [Visit]) {
-        visits = data;
+        visits = Array<Visit>(data);
+        self.visitTableViews.reloadData();
     }
     
     
@@ -41,8 +42,9 @@ class VisitViewController: UIViewController, UITableViewDelegate, visitsAcquired
 }
 
 extension VisitViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        
         print("Shared Count" + String(visits.count))
         return visits.count
     }
