@@ -10,7 +10,8 @@ import GoogleSignIn
 class SignViewController: UIViewController, AdminSignInDelegate {
     func didFetchData(data: Bool) {
         if data {
-            performSegue(withIdentifier: "AdminLogin", sender: self)
+            
+            performSegue(withIdentifier: "SignIn", sender: self)
             
         } else{
             performSegue(withIdentifier: "StaffLogin", sender: self)
