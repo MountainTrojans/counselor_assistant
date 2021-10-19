@@ -25,6 +25,7 @@
 		507950A9271A259500EC4592 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A8271A259400EC4592 /* VisitTableViewCell.swift */; };
 		524107F62713FE5F00D6F11E /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524107F52713FE5F00D6F11E /* AdminViewController.swift */; };
 		524107F8271404DD00D6F11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524107F7271404DD00D6F11E /* Main.storyboard */; };
+		526ECB49271F7FA3001703D1 /* BillableCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526ECB48271F7FA3001703D1 /* BillableCode.swift */; };
 		529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E6CB5270955C400BE8D07 /* SignViewController.swift */; };
 		529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E6CB72709678E00BE8D07 /* AccountModel.swift */; };
 		7114B53FB14675007CAB25A8 /* Pods_counselor_assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCE7DE581E11E5840AF57B6 /* Pods_counselor_assistant.framework */; };
@@ -75,6 +76,7 @@
 		507950A8271A259400EC4592 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		524107F52713FE5F00D6F11E /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		524107F7271404DD00D6F11E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		526ECB48271F7FA3001703D1 /* BillableCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillableCode.swift; sourceTree = "<group>"; };
 		529E6CB5270955C400BE8D07 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		529E6CB72709678E00BE8D07 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		645F2F44FD052CF48D259B60 /* Pods-counselor_assistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistantTests.release.xcconfig"; path = "Target Support Files/Pods-counselor_assistantTests/Pods-counselor_assistantTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,10 +191,10 @@
 			children = (
 				1CDF5ADB270954C5004967AB /* Visit.swift */,
 				1CDF5ADF27095853004967AB /* VisitModel.swift */,
+				526ECB48271F7FA3001703D1 /* BillableCode.swift */,
 				529E6CB72709678E00BE8D07 /* AccountModel.swift */,
 				1C59F1F62712AB330030A93B /* BillableCodeModel.swift */,
 				1C59F1F827136B640030A93B /* AccountManager.swift */,
-				A584021D271E629B00D3415D /* BillableCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -512,7 +514,7 @@
 				524107F62713FE5F00D6F11E /* AdminViewController.swift in Sources */,
 				1CDF5ADC270954C5004967AB /* Visit.swift in Sources */,
 				1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */,
-				A584021E271E629B00D3415D /* BillableCode.swift in Sources */,
+				526ECB49271F7FA3001703D1 /* BillableCode.swift in Sources */,
 				529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */,
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
 				529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */,
