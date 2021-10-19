@@ -11,7 +11,6 @@ import FirebaseUI
 import GoogleSignIn
 
 @UIApplicationMain
-
 class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate ,GIDSignInDelegate{
 // [END appdelegate_interfaces]
     
