@@ -8,9 +8,12 @@
 import UIKit
 class NewVisitController: UIViewController, codeAcquiredDelegate {
     
-    func didFetchCode(data: [String]) {
+    func didFetchCode(data: [BillableCode]) {
         // do something with data
         
+    }
+    func didFetchCode(data: [String]) {
+        // do something with data
     }
  
     override func viewDidLoad() {

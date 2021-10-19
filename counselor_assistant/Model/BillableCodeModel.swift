@@ -10,15 +10,19 @@ import FirebaseAuth
 import Firebase
 
 protocol codeAcquiredDelegate {
-    func didFetchCode(data: [String]);
+    func didFetchCode(data: [BillableCode]);
+}
+
+protocol nonCodeAcquiredDelegate {
+    func didFetchCode(data: [String])
 }
 
 class BillableCodeModel {
-    static func addNewBillableCode(name: String){
+    static func addNewBillableCode(billableCode: BillableCode){
         let db = Firestore.firestore();
         let randomID = UUID.init().uuidString
         db.collection("BillableCode").document(randomID).setData([
-            "billableCodeName": name
+            "billableCodeName": billableCode.billableCode,"costPerHour":billableCode.costPerHour
         ]) { (error) in
                 if error != nil{
                     print("Error in AddNewBillableCode")
@@ -29,7 +33,7 @@ class BillableCodeModel {
         
     static func getBillableCode(vc: codeAcquiredDelegate) {
         let db = Firestore.firestore();
-        var billableCodes = [String]()
+        var billableCodes = [BillableCode]()
         let billableCodeRef = db.collection("BillableCode")
         billableCodeRef.getDocuments { (querySnapshot, err) in
             if let err = err {
@@ -39,8 +43,7 @@ class BillableCodeModel {
                     if !actualquery.isEmpty{
                         for document in querySnapshot!.documents {
                             let billableCodeObj = document.data() as [String: AnyObject]
-                            let name = billableCodeObj["billableCodeName"]
-                            billableCodes.append(name as! String)
+                            billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? Int,costPerHour: billableCodeObj["costPerHour"] as? Int))
                         }
                         vc.didFetchCode(data: billableCodes)
                     }
@@ -63,7 +66,7 @@ class BillableCodeModel {
     }
     
         
-    func getNonBillableCode(vc: codeAcquiredDelegate) {
+    func getNonBillableCode(vc: nonCodeAcquiredDelegate) {
         let db = Firestore.firestore();
         var nonBillableCodes = [String]()
         let nonBillableCodeRef = db.collection("NonBillableCode")

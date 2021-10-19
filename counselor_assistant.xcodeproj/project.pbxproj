@@ -192,6 +192,7 @@
 				529E6CB72709678E00BE8D07 /* AccountModel.swift */,
 				1C59F1F62712AB330030A93B /* BillableCodeModel.swift */,
 				1C59F1F827136B640030A93B /* AccountManager.swift */,
+				A584021D271E629B00D3415D /* BillableCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -511,6 +512,7 @@
 				524107F62713FE5F00D6F11E /* AdminViewController.swift in Sources */,
 				1CDF5ADC270954C5004967AB /* Visit.swift in Sources */,
 				1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */,
+				A584021E271E629B00D3415D /* BillableCode.swift in Sources */,
 				529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */,
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
 				529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */,
