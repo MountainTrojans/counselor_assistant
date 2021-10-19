@@ -14,7 +14,6 @@ class AdminViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
     @IBAction func clickAddAdminBtn(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Admin Email",
         message: "Enter the email",

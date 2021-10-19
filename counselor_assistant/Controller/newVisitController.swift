@@ -6,11 +6,14 @@
 //
 
 import UIKit
-class newVisitController: UIViewController, codeAcquiredDelegate {
+class newVisitController: UIViewController, codeAcquiredDelegate,nonCodeAcquiredDelegate {
     
-    func didFetchCode(data: [String]) {
+    func didFetchCode(data: [BillableCode]) {
         // do something with data
         
+    }
+    func didFetchCode(data: [String]) {
+        // do something with data
     }
  
     override func viewDidLoad() {
