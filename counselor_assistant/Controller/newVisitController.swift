@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class newVisitController: UIViewController, codeAcquiredDelegate {
+class NewVisitController: UIViewController, codeAcquiredDelegate {
     
     func didFetchCode(data: [String]) {
         // do something with data

@@ -9,10 +9,6 @@ import UIKit
 
 class VisitTableViewCell: UITableViewCell {
 
-    
-    @IBOutlet weak var visitView: UIView!
-    
-    @IBOutlet weak var labelView: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
