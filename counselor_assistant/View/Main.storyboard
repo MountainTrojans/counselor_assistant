@@ -126,55 +126,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2465" y="-783"/>
-        </scene>
-        <!--Analytics-->
-        <scene sceneID="XZY-91-1uz">
-            <objects>
-                <tableViewController id="0XN-EY-zUi" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q8b-qe-Jkc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7XK-rE-imk">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7XK-rE-imk" id="995-1N-Qbh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0XN-EY-zUi" id="8Tg-4h-3vT"/>
-                            <outlet property="delegate" destination="0XN-EY-zUi" id="id1-P2-lO5"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Analytics" image="lightbulb.fill" catalog="system" id="Ebu-3R-bUn"/>
-                    <navigationItem key="navigationItem" title="Analytics" id="c9I-nQ-Jq9"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tj4-ts-4Jb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2583" y="78"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="SQY-rd-hnH">
-            <objects>
-                <navigationController id="bdz-16-iB9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Nzl-rY-Xrh"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nHp-ej-0wG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="0XN-EY-zUi" kind="relationship" relationship="rootViewController" id="aYi-e0-3V0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cu-eO-gD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1268" y="78"/>
         </scene>
         <!--New Visit Controller-->
         <scene sceneID="gQQ-A5-iMZ">
@@ -299,7 +250,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szL-if-bDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4012" y="-783"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ibf-HK-MFB">
