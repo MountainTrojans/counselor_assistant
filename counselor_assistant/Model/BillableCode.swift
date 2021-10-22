@@ -8,11 +8,12 @@
 import Foundation
 
 class BillableCode {
-    internal init(billableCode:Int? = nil,costPerHour:Int? = nil){
+    internal init(billableCode:String? = nil,costPerHour:Int? = nil){
         self.billableCode = billableCode
         self.costPerHour = costPerHour
+        
     }
-    var billableCode:Int?
+    var billableCode:String?
     var costPerHour: Int?
     
 }

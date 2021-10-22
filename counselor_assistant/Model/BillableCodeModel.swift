@@ -32,6 +32,7 @@ class BillableCodeModel {
     
         
     static func getBillableCode(vc: codeAcquiredDelegate) {
+        print("Getting all billable codes")
         let db = Firestore.firestore();
         var billableCodes = [BillableCode]()
         let billableCodeRef = db.collection("BillableCode")
@@ -43,7 +44,7 @@ class BillableCodeModel {
                     if !actualquery.isEmpty{
                         for document in querySnapshot!.documents {
                             let billableCodeObj = document.data() as [String: AnyObject]
-                            billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? Int,costPerHour: billableCodeObj["costPerHour"] as? Int))
+                            billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? String,costPerHour: billableCodeObj["costPerHour"] as? Int))
                         }
                         vc.didFetchCode(data: billableCodes)
                     }

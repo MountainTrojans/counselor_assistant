@@ -30,6 +30,9 @@
 		529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E6CB72709678E00BE8D07 /* AccountModel.swift */; };
 		7114B53FB14675007CAB25A8 /* Pods_counselor_assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCE7DE581E11E5840AF57B6 /* Pods_counselor_assistant.framework */; };
 		A56A189327190AD5007D749F /* NewVisitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A189227190AD5007D749F /* NewVisitController.swift */; };
+		A59A26AB27234EB500D21B25 /* accountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A26AA27234EB500D21B25 /* accountViewController.swift */; };
+		A59A26AD2723517400D21B25 /* CodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A26AC2723517400D21B25 /* CodesViewController.swift */; };
+		A59A26AF2723591200D21B25 /* codesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A26AE2723591200D21B25 /* codesTableViewCell.swift */; };
 		AF1E5A0E5C3B0E605DBEC173 /* Pods_counselor_assistant_counselor_assistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92029F5E997FD5EDB96785F4 /* Pods_counselor_assistant_counselor_assistantUITests.framework */; };
 		C745AAB9A220520B448A4B58 /* Pods_counselor_assistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9229094BF45677112856D7C /* Pods_counselor_assistantTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,9 @@
 		966D5710AC5C99A5B7BA7B06 /* Pods-counselor_assistant-counselor_assistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistant-counselor_assistantUITests.release.xcconfig"; path = "Target Support Files/Pods-counselor_assistant-counselor_assistantUITests/Pods-counselor_assistant-counselor_assistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A08DE76E122548A29C2F626C /* Pods-counselor_assistant-counselor_assistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistant-counselor_assistantUITests.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistant-counselor_assistantUITests/Pods-counselor_assistant-counselor_assistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A56A189227190AD5007D749F /* NewVisitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitController.swift; sourceTree = "<group>"; };
+		A59A26AA27234EB500D21B25 /* accountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountViewController.swift; sourceTree = "<group>"; };
+		A59A26AC2723517400D21B25 /* CodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodesViewController.swift; sourceTree = "<group>"; };
+		A59A26AE2723591200D21B25 /* codesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codesTableViewCell.swift; sourceTree = "<group>"; };
 		D9229094BF45677112856D7C /* Pods_counselor_assistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_counselor_assistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCE7DE581E11E5840AF57B6 /* Pods_counselor_assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_counselor_assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17537894073F7B7FA55A122 /* Pods-counselor_assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistant.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistant/Pods-counselor_assistant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +222,9 @@
 				507950A8271A259400EC4592 /* VisitTableViewCell.swift */,
 				524107F52713FE5F00D6F11E /* AdminViewController.swift */,
 				A56A189227190AD5007D749F /* NewVisitController.swift */,
+				A59A26AA27234EB500D21B25 /* accountViewController.swift */,
+				A59A26AC2723517400D21B25 /* CodesViewController.swift */,
+				A59A26AE2723591200D21B25 /* codesTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -512,13 +521,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				524107F62713FE5F00D6F11E /* AdminViewController.swift in Sources */,
+				A59A26AD2723517400D21B25 /* CodesViewController.swift in Sources */,
 				1CDF5ADC270954C5004967AB /* Visit.swift in Sources */,
 				1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */,
 				526ECB49271F7FA3001703D1 /* BillableCode.swift in Sources */,
 				529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */,
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
+				A59A26AF2723591200D21B25 /* codesTableViewCell.swift in Sources */,
 				529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */,
 				1C59F1F927136B640030A93B /* AccountManager.swift in Sources */,
+				A59A26AB27234EB500D21B25 /* accountViewController.swift in Sources */,
 				1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */,
 				A56A189327190AD5007D749F /* NewVisitController.swift in Sources */,
 				1CB4867226F8EE1000A4D469 /* SceneDelegate.swift in Sources */,

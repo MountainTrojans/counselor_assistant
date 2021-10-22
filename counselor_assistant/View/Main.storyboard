@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kdc-Kw-HDJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kdc-Kw-HDJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -111,11 +110,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="SUB-zf-Lhq">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Ia5-Y9-xtY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8O8-8T-eVJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8O8-8T-eVJ">
                                 <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -228,7 +226,7 @@
         <!--StaffSetting-->
         <scene sceneID="iEs-MZ-H4U">
             <objects>
-                <viewController id="dpJ-sN-Zn9" userLabel="StaffSetting" sceneMemberID="viewController">
+                <viewController id="dpJ-sN-Zn9" userLabel="StaffSetting" customClass="accountViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CAj-OE-Cc5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,16 +241,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="790-L5-NLT">
-                                <rect key="frame" x="4" y="208" width="127" height="31"/>
+                                <rect key="frame" x="12" y="207" width="127" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="BillableCodeBtn"/>
+                                <accessibility key="accessibilityConfiguration" label="Billable Codes"/>
+                                <state key="normal" title="Billable Codes"/>
+                                <connections>
+                                    <segue destination="NM9-Gc-9NF" kind="presentation" modalPresentationStyle="fullScreen" id="Zcr-PX-wBz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF8-mT-DOX">
-                                <rect key="frame" x="20" y="259" width="67" height="31"/>
+                                <rect key="frame" x="20" y="246" width="111" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <state key="normal" title="Program Codes"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aGa-DS-dOj"/>
@@ -264,10 +264,42 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9nS-3f-znB"/>
+                    <connections>
+                        <outlet property="billableCodesButton" destination="790-L5-NLT" id="e6j-VG-7Rp"/>
+                        <outlet property="programCodesButton" destination="PF8-mT-DOX" id="wjG-lG-x2x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUh-GL-BfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1990" y="834"/>
+            <point key="canvasLocation" x="1989.8550724637682" y="833.70535714285711"/>
+        </scene>
+        <!--Codes View Controller-->
+        <scene sceneID="HC8-BA-L8x">
+            <objects>
+                <tableViewController id="NM9-Gc-9NF" customClass="CodesViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="S5N-wg-2qg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="codeCell" id="ruV-gv-Rve" customClass="codesTableViewCell" customModule="counselor_assistant" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ruV-gv-Rve" id="b5t-xr-RYJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NM9-Gc-9NF" id="NIm-FR-KvI"/>
+                            <outlet property="delegate" destination="NM9-Gc-9NF" id="whd-Qz-1Db"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxU-UA-YjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2845" y="834"/>
         </scene>
         <!--Account-->
         <scene sceneID="A64-uG-gxh">
@@ -315,7 +347,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="visitCell" rowHeight="200" id="yDY-me-ana" customClass="VisitTableViewCell" customModule="counselor_assistant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDY-me-ana" id="0dA-vc-SJ3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -390,7 +422,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VisitCell" rowHeight="124" id="4kx-Bx-ft0" customClass="VisitTableViewCell" customModule="counselor_assistant" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="124"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4kx-Bx-ft0" id="Inc-QM-z7m">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
@@ -428,7 +460,6 @@
                                 <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="znG-Of-yvR">
