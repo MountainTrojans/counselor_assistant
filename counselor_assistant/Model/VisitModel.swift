@@ -74,7 +74,16 @@ class VisitModel
             }
     }
     
-        
+    static func deleteVisit(visit: Visit) {
+        db.collection("VisitHistory_"+VisitModel.username).document(visit.randomID).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
+    
 
     
 }
