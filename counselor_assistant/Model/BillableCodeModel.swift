@@ -12,7 +12,10 @@ import FirebaseFirestore
 
 protocol codeAcquiredDelegate {
     func didFetchCode(data: [BillableCode]);
+    func didEditCode();
+    func didRemoveCode();
 }
+
 
 protocol nonCodeAcquiredDelegate {
     func didFetchCode(data: [String])
@@ -22,22 +25,25 @@ protocol nonCodeAcquiredDelegate {
 class BillableCodeModel {
     static let db = Firestore.firestore();
     
-    static func addNewBillableCode(billableCode: BillableCode){
+    static func addNewBillableCode(billableCode: BillableCode, vc: codeAcquiredDelegate){
         
         BillableCodeModel.db.collection("BillableCode").document(billableCode.randomID).setData([
             "billableCodeName": billableCode.billableCode,"costPerHour":billableCode.costPerHour, "description":billableCode.description
         ]) { (error) in
                 if error != nil{
                     print("Error in AddNewBillableCode")
+                } else {
+                    vc.didEditCode()
                 }
             }
     }
     
-    static func deleteBillableCode(billableCode: BillableCode) {
+    static func deleteBillableCode(billableCode: BillableCode, vc: codeAcquiredDelegate) {
         db.collection("BillableCode").document(billableCode.randomID).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {
+                vc.didRemoveCode()
                 print("Document successfully removed!")
             }
         }

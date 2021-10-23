@@ -11,29 +11,34 @@ import FirebaseFirestore
 
 protocol programAcquiredDelegate {
     func didFetchPrograms(data: [Program]);
+    func didEditPrograms();
+    func didRemovePrograms()
 }
 
 
 class ProgramModel {
     static let db = Firestore.firestore();
     
-    static func setNewProgram(program: Program){
+    static func setNewProgram(program: Program, vc: programAcquiredDelegate){
         
         BillableCodeModel.db.collection("Program").document(program.randomID).setData([
             "programName": program.programName,"programTotal":program.programTotal, "moneyLeft": program.moneyLeft, "description": program.description
         ]) { (error) in
                 if error != nil{
                     print("Error in AddNewProgram")
+                } else {
+                    vc.didEditPrograms()
                 }
             }
     }
     
-    static func deleteProgram(program: Program) {
+    static func deleteProgram(program: Program, vc: programAcquiredDelegate) {
         db.collection("Program").document(program.randomID).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {
                 print("Document successfully removed!")
+                vc.didRemovePrograms()
             }
         }
     }

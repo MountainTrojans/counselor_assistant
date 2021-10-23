@@ -8,6 +8,14 @@
 import UIKit
 
 class VisitTableViewController: UITableViewController, visitsAcquiredDelegate {
+    func didEditVisits() {
+        return
+    }
+    
+    func didRemoveVisits() {
+        return
+    }
+    
     func didFetchVisits(data: [Visit]) {
         visits = Array<Visit>(data);
         tableView.reloadData()

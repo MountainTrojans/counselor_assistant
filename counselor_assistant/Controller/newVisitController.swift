@@ -6,7 +6,25 @@
 //
 
 import UIKit
-class NewVisitController: UIViewController, codeAcquiredDelegate {
+class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquiredDelegate {
+    func didFetchVisits(data: [Visit]) {
+        
+    }
+    func didEditVisits() {
+        
+    }
+    func didRemoveVisits() {
+        
+    }
+    
+    func didEditCode() {
+        return
+    }
+    
+    func didRemoveCode() {
+        return
+    }
+    
     
     func didFetchCode(data: [BillableCode]) {
         // do something with data
@@ -50,7 +68,7 @@ class NewVisitController: UIViewController, codeAcquiredDelegate {
 
 
         let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
-        VisitModel.shared.addNewVisit(visit: visit)
+        VisitModel.shared.addNewVisit(visit: visit, vc: self)
         self.navigationController?.popViewController(animated: true)
 
 

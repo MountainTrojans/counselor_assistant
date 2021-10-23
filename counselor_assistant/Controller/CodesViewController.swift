@@ -8,6 +8,14 @@
 import UIKit
 
 class CodesViewController: UITableViewController, codeAcquiredDelegate {
+    func didRemoveCode() {
+        return
+    }
+    
+    func didEditCode() {
+        return
+    }
+    
     
     var billableCodes = Array<BillableCode>()
     func didFetchCode(data: [BillableCode]) {

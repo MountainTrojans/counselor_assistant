@@ -12,6 +12,8 @@ import FirebaseFirestore
 
 protocol visitsAcquiredDelegate {
     func didFetchVisits(data: [Visit]);
+    func didEditVisits();
+    func didRemoveVisits();
 }
 
 
@@ -52,7 +54,7 @@ class VisitModel
         }
     }
     
-    func addNewVisit(visit: Visit) {
+    func addNewVisit(visit: Visit, vc: visitsAcquiredDelegate) {
         // db.collection("Account")
         VisitModel.db.collection("VisitHistory_"+VisitModel.username).document(visit.randomID).setData([
             "clientInitials":visit.clientInitials,
@@ -69,17 +71,20 @@ class VisitModel
         ]) { (error) in
                 if error != nil
                 {
-                
+                    print("Error in addNewVisit")
+                } else {
+                    vc.didEditVisits()
                 }
             }
     }
     
-    static func deleteVisit(visit: Visit) {
+    static func deleteVisit(visit: Visit, vc: visitsAcquiredDelegate) {
         db.collection("VisitHistory_"+VisitModel.username).document(visit.randomID).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {
                 print("Document successfully removed!")
+                vc.didRemoveVisits()
             }
         }
     }
