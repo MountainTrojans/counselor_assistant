@@ -56,7 +56,7 @@ class BillableCodeModel {
                     if !actualquery.isEmpty{
                         for document in querySnapshot!.documents {
                             let billableCodeObj = document.data() as [String: AnyObject]
-                            billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? Int,costPerHour: billableCodeObj["costPerHour"] as? Int, description: billableCodeObj["description"] as? String, randomID: document.documentID))
+                            billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? String,costPerHour: billableCodeObj["costPerHour"] as? Int, description: billableCodeObj["description"] as? String, randomID: document.documentID))
                         }
                         vc.didFetchCode(data: billableCodes)
                     }
