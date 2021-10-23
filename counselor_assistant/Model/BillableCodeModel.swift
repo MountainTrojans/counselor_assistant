@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 protocol codeAcquiredDelegate {
     func didFetchCode(data: [BillableCode]);
@@ -17,12 +18,14 @@ protocol nonCodeAcquiredDelegate {
     func didFetchCode(data: [String])
 }
 
+
 class BillableCodeModel {
+    static let db = Firestore.firestore();
+    
     static func addNewBillableCode(billableCode: BillableCode){
-        let db = Firestore.firestore();
-        let randomID = UUID.init().uuidString
-        db.collection("BillableCode").document(randomID).setData([
-            "billableCodeName": billableCode.billableCode,"costPerHour":billableCode.costPerHour
+        
+        BillableCodeModel.db.collection("BillableCode").document(billableCode.randomID).setData([
+            "billableCodeName": billableCode.billableCode,"costPerHour":billableCode.costPerHour, "description":billableCode.description
         ]) { (error) in
                 if error != nil{
                     print("Error in AddNewBillableCode")
@@ -30,12 +33,23 @@ class BillableCodeModel {
             }
     }
     
+    static func deleteBillableCode(billableCode: BillableCode) {
+        db.collection("BillableCode").document(billableCode.randomID).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
+    
+    
         
     static func getBillableCode(vc: codeAcquiredDelegate) {
         print("Getting all billable codes")
         let db = Firestore.firestore();
         var billableCodes = [BillableCode]()
-        let billableCodeRef = db.collection("BillableCode")
+        let billableCodeRef = BillableCodeModel.db.collection("BillableCode")
         billableCodeRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -44,7 +58,7 @@ class BillableCodeModel {
                     if !actualquery.isEmpty{
                         for document in querySnapshot!.documents {
                             let billableCodeObj = document.data() as [String: AnyObject]
-                            billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? String,costPerHour: billableCodeObj["costPerHour"] as? Int))
+                            billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? String,costPerHour: billableCodeObj["costPerHour"] as? Int, description: billableCodeObj["description"] as? String, randomID: document.documentID))
                         }
                         vc.didFetchCode(data: billableCodes)
                     }
@@ -55,9 +69,8 @@ class BillableCodeModel {
     }
     
     func addNewNonBillableCode(name: String){
-        let db = Firestore.firestore();
         let randomID = UUID.init().uuidString
-        db.collection("NonBillableCode").document(randomID).setData([
+        BillableCodeModel.db.collection("NonBillableCode").document(randomID).setData([
             "nonBillableCodeName": name
         ]) { (error) in
                 if error != nil{
@@ -68,9 +81,8 @@ class BillableCodeModel {
     
         
     func getNonBillableCode(vc: nonCodeAcquiredDelegate) {
-        let db = Firestore.firestore();
         var nonBillableCodes = [String]()
-        let nonBillableCodeRef = db.collection("NonBillableCode")
+        let nonBillableCodeRef = BillableCodeModel.db.collection("NonBillableCode")
         nonBillableCodeRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
