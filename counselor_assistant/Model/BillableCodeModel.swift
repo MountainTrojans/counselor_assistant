@@ -46,6 +46,8 @@ class BillableCodeModel {
     
         
     static func getBillableCode(vc: codeAcquiredDelegate) {
+        print("Getting all billable codes")
+        let db = Firestore.firestore();
         var billableCodes = [BillableCode]()
         let billableCodeRef = BillableCodeModel.db.collection("BillableCode")
         billableCodeRef.getDocuments { (querySnapshot, err) in
