@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1E675F27234F1F00801D51 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E675E27234F1F00801D51 /* Program.swift */; };
+		1C1E67612723A5E400801D51 /* ProgramModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E67602723A5E400801D51 /* ProgramModel.swift */; };
 		1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C59F1F62712AB330030A93B /* BillableCodeModel.swift */; };
 		1C59F1F927136B640030A93B /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C59F1F827136B640030A93B /* AccountManager.swift */; };
 		1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4866F26F8EE1000A4D469 /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		16B2EBE82D72238F1DE7868D /* Pods-counselor_assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistant.release.xcconfig"; path = "Target Support Files/Pods-counselor_assistant/Pods-counselor_assistant.release.xcconfig"; sourceTree = "<group>"; };
+		1C1E675E27234F1F00801D51 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		1C1E67602723A5E400801D51 /* ProgramModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramModel.swift; sourceTree = "<group>"; };
 		1C59F1F62712AB330030A93B /* BillableCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillableCodeModel.swift; sourceTree = "<group>"; };
 		1C59F1F827136B640030A93B /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		1CB4866C26F8EE1000A4D469 /* counselor_assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counselor_assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +199,8 @@
 				529E6CB72709678E00BE8D07 /* AccountModel.swift */,
 				1C59F1F62712AB330030A93B /* BillableCodeModel.swift */,
 				1C59F1F827136B640030A93B /* AccountManager.swift */,
+				1C1E675E27234F1F00801D51 /* Program.swift */,
+				1C1E67602723A5E400801D51 /* ProgramModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -516,6 +522,8 @@
 				1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */,
 				526ECB49271F7FA3001703D1 /* BillableCode.swift in Sources */,
 				529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */,
+				1C1E675F27234F1F00801D51 /* Program.swift in Sources */,
+				1C1E67612723A5E400801D51 /* ProgramModel.swift in Sources */,
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
 				529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */,
 				1C59F1F927136B640030A93B /* AccountManager.swift in Sources */,

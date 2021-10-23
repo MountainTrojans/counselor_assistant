@@ -8,22 +8,15 @@
 import Foundation
 
 class BillableCode {
-    internal init(billableCode:Int? = nil,costPerHour:Int? = nil){
+    internal init(billableCode: Int? = nil, costPerHour: Int? = nil, description: String? = nil, randomID: String = UUID.init().uuidString) {
         self.billableCode = billableCode
         self.costPerHour = costPerHour
+        self.description = description
+        self.randomID = randomID
     }
+    
     var billableCode:Int?
     var costPerHour: Int?
-    
-}
-class Programs{
-    internal init(programName:String? = nil, programTotal:Double? = nil,moneyLeft:Double? = nil){
-        self.programTotal = programTotal
-        self.moneyLeft = moneyLeft
-        self.programName = programName
-    }
-    var programName:String?
-    var programTotal:Double?
-    var moneyLeft:Double?
-    
+    var description: String?
+    var randomID: String
 }

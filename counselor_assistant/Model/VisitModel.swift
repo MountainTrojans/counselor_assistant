@@ -40,8 +40,8 @@ class VisitModel
                         print("The list is not empty")
                         for document in querySnapshot!.documents {
                             let visitObj = document.data() as [String: AnyObject]
+                            visits.append(Visit(clientInitials: visitObj["clientInitials"] as? String, billableCodeSelection: visitObj["billableCodeSelection"] as? Int, programSelection: visitObj["programSelection"] as? Int, nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj["serviceMinutes"] as? Double, documentationMinutes: visitObj["documentationMinutes"] as? Double, noteWritten: visitObj["noteWritten"] as? Bool, noteApproved: visitObj["noteApproved"] as? Bool, CDI: visitObj["CDI"] as? Bool, randomID: document.documentID))
                             
-                            visits.append(Visit(clientInitials: visitObj["clientInitials"] as? String, billableCodeSelection: visitObj["billableCodeSelection"] as? Int, programSelection: visitObj["programSelection"] as? Int, nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj["serviceMinutes"] as? Double, documentationMinutes: visitObj["documentationMinutes"] as? Double, noteWritten: visitObj["noteWritten"] as? Bool, noteApproved: visitObj["noteApproved"] as? Bool, CDI: visitObj["CDI"] as? Bool))
                     
                         }
                     }
@@ -53,9 +53,8 @@ class VisitModel
     }
     
     func addNewVisit(visit: Visit) {
-        let randomID = UUID.init().uuidString
         // db.collection("Account")
-        VisitModel.db.collection("VisitHistory_"+VisitModel.username).document(randomID).setData([
+        VisitModel.db.collection("VisitHistory_"+VisitModel.username).document(visit.randomID).setData([
             "clientInitials":visit.clientInitials,
             "billableCodeSelection": visit.billableCodeSelection,
             "programSelection":visit.programSelection,
@@ -67,7 +66,6 @@ class VisitModel
             "noteWritten" : visit.noteWritten,
             "noteApproved" : visit.noteApproved,
             "CDI": visit.CDI,
-            "uid": randomID,
         ]) { (error) in
                 if error != nil
                 {
