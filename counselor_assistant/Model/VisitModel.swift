@@ -42,13 +42,24 @@ class VisitModel
                         print("The list is not empty")
                         for document in querySnapshot!.documents {
                             let visitObj = document.data() as [String: AnyObject]
-                            visits.append(Visit(clientInitials: visitObj["clientInitials"] as? String, billableCodeSelection: visitObj["billableCodeSelection"] as? Int, programSelection: visitObj["programSelection"] as? Int, nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int, totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double, totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double, serviceMinutes: visitObj["serviceMinutes"] as? Double, documentationMinutes: visitObj["documentationMinutes"] as? Double, noteWritten: visitObj["noteWritten"] as? Bool, noteApproved: visitObj["noteApproved"] as? Bool, CDI: visitObj["CDI"] as? Bool, randomID: document.documentID))
-                            
-                    
+                            visits.append(
+                                Visit(
+                                    clientInitials: visitObj["clientInitials"] as? String,
+                                    billableCodeSelection: visitObj["billableCodeSelection"] as? Int,
+                                    programSelection: visitObj["programSelection"] as? Int,
+                                    nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int,
+                                    totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double,
+                                    totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double,
+                                    serviceMinutes: visitObj["serviceMinutes"] as? Double,
+                                    documentationMinutes: visitObj["documentationMinutes"] as? Double,
+                                    noteWritten: visitObj["noteWritten"] as? Bool,
+                                    noteApproved: visitObj["noteApproved"] as? Bool,
+                                    CDI: visitObj["CDI"] as? Bool,
+                                    notes: visitObj["notes"] as? String,
+                                    randomID: document.documentID))
                         }
                     }
                     vc.didFetchVisits(data: visits);
-                
                 }
             }
         }
@@ -67,6 +78,7 @@ class VisitModel
             "documentationMinutes": visit.documentationMinutes,
             "noteWritten" : visit.noteWritten,
             "noteApproved" : visit.noteApproved,
+            "notes" : visit.notes,
             "CDI": visit.CDI,
         ]) { (error) in
                 if error != nil

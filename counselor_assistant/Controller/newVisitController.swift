@@ -41,16 +41,17 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
     }
     
     @IBOutlet weak var clientInitials: UITextField!
-    @IBOutlet weak var billableCode: UITextField!
-    @IBOutlet weak var programSelection: UITextField!
-    @IBOutlet weak var nonBillableCodeSelection: UITextField!
+    @IBOutlet weak var billableCode: UIButton!
+    @IBOutlet weak var programSelection: UIButton!
+    @IBOutlet weak var nonBillableCodeSelection: UIButton!
     @IBOutlet weak var totalRoundTripMiles: UITextField!
     @IBOutlet weak var roundTripMinutes: UITextField!
     @IBOutlet weak var serviceMinutes: UITextField!
     @IBOutlet weak var documentationMinutes: UITextField!
-    @IBOutlet weak var noteWritten: UITextField!
-    @IBOutlet weak var noteApproved: UITextField!
-    @IBOutlet weak var CDI: UITextField!
+    @IBOutlet weak var noteWritten: UISwitch!
+    @IBOutlet weak var noteApproved: UISwitch!
+    @IBOutlet weak var CDI: UISwitch!
+    @IBOutlet weak var Notes: UITextField!
     
     @IBAction func submitVisitTapped(_ sender: UIButton) {
         let client: String? = String(clientInitials.text!)
