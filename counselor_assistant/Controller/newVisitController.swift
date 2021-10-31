@@ -54,23 +54,23 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
     @IBOutlet weak var Notes: UITextField!
     
     @IBAction func submitVisitTapped(_ sender: UIButton) {
-        let client: String? = String(clientInitials.text!)
-        let addbillableCode: Int? = Int(billableCode.text!)
-        let nonBillableCode: Int? = Int(nonBillableCodeSelection.text!)
-        let program : Int? = Int(programSelection.text!)
-        let addmiles :Double? = Double(totalRoundTripMiles.text!)
-        let tripminutes: Double? = Double(roundTripMinutes.text!)
-        let addserviceMinutes:Double? = Double(serviceMinutes.text!)
-        let documentMinutes:Double? = Double(documentationMinutes.text!)
-        let notewritten:Bool? = Bool(noteWritten.text!)
-        let noteapproved: Bool? = Bool(noteApproved.text!)
-        let cdi:Bool? = Bool(CDI.text!)
-
-
-
-        let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
-        VisitModel.shared.addNewVisit(visit: visit, vc: self)
-        self.navigationController?.popViewController(animated: true)
+//        let client: String? = String(clientInitials.text!)
+//        let addbillableCode: Int? = Int(billableCode.text!)
+//        let nonBillableCode: Int? = Int(nonBillableCodeSelection.text!)
+//        let program : Int? = Int(programSelection.text!)
+//        let addmiles :Double? = Double(totalRoundTripMiles.text!)
+//        let tripminutes: Double? = Double(roundTripMinutes.text!)
+//        let addserviceMinutes:Double? = Double(serviceMinutes.text!)
+//        let documentMinutes:Double? = Double(documentationMinutes.text!)
+//        let notewritten:Bool? = Bool(noteWritten.text!)
+//        let noteapproved: Bool? = Bool(noteApproved.text!)
+//        let cdi:Bool? = Bool(CDI.text!)
+//
+//
+//
+//        let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
+//        VisitModel.shared.addNewVisit(visit: visit, vc: self)
+//        self.navigationController?.popViewController(animated: true)
 
 
     }
