@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquiredDelegate ,
+class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquiredDelegate ,
                            UIPickerViewDelegate, UIPickerViewDataSource{
     func didFetchVisits(data: [Visit]) {
         
@@ -18,17 +18,18 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
         
     }
     
-    func didEditCode() {
+    func didEditBillableCode() {
         return
     }
     
-    func didRemoveCode() {
+    func didRemoveBillableCodeCode() {
         return
     }
     
     
-    func didFetchCode(data: [BillableCode]) {
+    func didFetchBillableCode(data: [BillableCode]) {
         // do something with data
+        BillableCodeArray = data
         
     }
     func didFetchCode(data: [String]) {
@@ -39,21 +40,25 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
         BillableCodeModel.getBillableCode(vc: self)
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
     
     
+    @IBOutlet weak var billCodeBtn: UIButton!
+    
+    
     @IBOutlet weak var clientInitials: UITextField!
-        @IBOutlet weak var billableCode: UIButton!
-        @IBOutlet weak var programSelection: UIButton!
-        @IBOutlet weak var nonBillableCodeSelection: UIButton!
-        @IBOutlet weak var totalRoundTripMiles: UITextField!
-        @IBOutlet weak var roundTripMinutes: UITextField!
-        @IBOutlet weak var serviceMinutes: UITextField!
-        @IBOutlet weak var documentationMinutes: UITextField!
-        @IBOutlet weak var noteWritten: UISwitch!
-        @IBOutlet weak var noteApproved: UISwitch!
-        @IBOutlet weak var CDI: UISwitch!
-        @IBOutlet weak var Notes: UITextField!
+
+    @IBOutlet weak var programSelection: UIButton!
+    @IBOutlet weak var nonBillableCodeSelection: UIButton!
+    @IBOutlet weak var totalRoundTripMiles: UITextField!
+    @IBOutlet weak var roundTripMinutes: UITextField!
+    @IBOutlet weak var serviceMinutes: UITextField!
+    @IBOutlet weak var documentationMinutes: UITextField!
+    @IBOutlet weak var noteWritten: UISwitch!
+    @IBOutlet weak var noteApproved: UISwitch!
+    @IBOutlet weak var CDI: UISwitch!
+    @IBOutlet weak var Notes: UITextField!
     
     @IBAction func submitVisitTapped(_ sender: UIButton) {
 //        let client: String? = String(clientInitials.text!)
@@ -85,11 +90,11 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
         var selectedRow = 0
         //var selectedRowTextColor = 0
         
-    var testArray = ["1","2"]
+    var BillableCodeArray: [BillableCode] = []
         
-    @IBAction func popUpPicker(_ sender: Any)
+    @IBAction func popUpPicker(_ sender: UIButton)
     {
-        pick
+        
             let vc = UIViewController()
             vc.preferredContentSize = CGSize(width: screenWidth, height: screenHeight)
             let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height:screenHeight))
@@ -103,6 +108,12 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
             vc.view.addSubview(pickerView)
             pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
             pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
+        
+        
+        
+        if(sender == billCodeBtn){
+            pickerView.tag = 1
+            
             
             let alert = UIAlertController(title: "Select Background Colour", message: "", preferredStyle: .actionSheet)
             
@@ -123,10 +134,22 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
             }))
             
             self.present(alert, animated: true, completion: nil)
+            
+        }
+            
+           
         }
         
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return testArray[row]
+            
+            if(pickerView.tag == 1 ){
+                return BillableCodeArray[row].billableCode ?? ""
+            } else if(pickerView.tag == 2){
+                
+            }
+            
+            return ""
+            
         }
         
         func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -136,7 +159,11 @@ class NewVisitController: UIViewController, codeAcquiredDelegate, visitsAcquired
         
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
         {
-            testArray.count
+            if(pickerView.tag == 1 ){
+                BillableCodeArray.count
+            }
+            
+            return 0;
         }
         
        

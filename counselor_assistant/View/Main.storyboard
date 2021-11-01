@@ -49,7 +49,7 @@
                                                 <rect key="frame" x="247.5" y="0.0" width="126.5" height="30"/>
                                                 <state key="normal" title="Select"/>
                                                 <connections>
-                                                    <action selector="popUpPicker:" destination="a23-By-A7d" eventType="touchUpInside" id="8xX-yN-VZx"/>
+                                                    <action selector="popUpPicker:" destination="a23-By-A7d" eventType="touchUpInside" id="qx2-0H-7g6"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -66,6 +66,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-Pp-fwx">
                                                 <rect key="frame" x="275.5" y="0.0" width="98.5" height="30"/>
                                                 <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="popUpPicker:" destination="a23-By-A7d" eventType="touchUpInside" id="Viz-j9-89Y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -81,6 +84,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-QB-AqP">
                                                 <rect key="frame" x="203.5" y="0.0" width="170.5" height="30"/>
                                                 <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="popUpPicker:" destination="a23-By-A7d" eventType="touchUpInside" id="0J6-9C-znM"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -281,6 +287,7 @@
                     <connections>
                         <outlet property="CDI" destination="Cjx-Mh-Hya" id="1Jh-za-Zl5"/>
                         <outlet property="Notes" destination="YLe-cf-3Yz" id="w6X-rZ-12L"/>
+                        <outlet property="billCodeBtn" destination="d3y-lU-iap" id="wzx-Ho-bmX"/>
                         <outlet property="clientInitials" destination="Xrp-Mn-Bbu" id="NZH-Xu-MMR"/>
                         <outlet property="documentationMinutes" destination="qc7-SX-Fte" id="NPt-IA-wy8"/>
                         <outlet property="nonBillableCodeSelection" destination="4wa-QB-AqP" id="TJy-0U-RyR"/>

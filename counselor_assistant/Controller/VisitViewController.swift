@@ -36,6 +36,7 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate {
 //        visitTableViews.dataSource = self
         
         VisitModel.loadExistingInfo(vc: self)
+        
       //  VisitModel.shared.loadExistingInfo()
         // Do any additional setup after loading the view.
     }
