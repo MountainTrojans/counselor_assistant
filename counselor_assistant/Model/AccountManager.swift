@@ -33,7 +33,6 @@ class AccountManager {
                 } else {
                     vc.didFetchData(data: false)
                 }
-                
             }
             
         }

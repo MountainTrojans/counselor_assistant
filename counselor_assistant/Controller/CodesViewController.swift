@@ -7,18 +7,18 @@
 
 import UIKit
 
-class CodesViewController: UITableViewController, codeAcquiredDelegate {
-    func didRemoveCode() {
+class CodesViewController: UITableViewController, BillableCodeDelagate {
+    func didRemoveBillableCodeCode() {
         return
     }
     
-    func didEditCode() {
+    func didEditBillableCode() {
         return
     }
     
     
     var billableCodes = Array<BillableCode>()
-    func didFetchCode(data: [BillableCode]) {
+    func didFetchBillableCode(data: [BillableCode]) {
         print("Fetched Code")
         billableCodes = Array<BillableCode>(data)
         print("Count after Fetching" + String(billableCodes.count))

@@ -10,22 +10,22 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
-protocol codeAcquiredDelegate {
-    func didFetchCode(data: [BillableCode]);
-    func didEditCode();
-    func didRemoveCode();
+protocol BillableCodeDelagate {
+    func didFetchBillableCode(data: [BillableCode]);
+    func didEditBillableCode();
+    func didRemoveBillableCodeCode();
 }
 
 
-protocol nonCodeAcquiredDelegate {
-    func didFetchCode(data: [String])
+protocol NonBillableCodeDelegate {
+    func didFetchNonBillableCode(data: [String])
 }
 
 
 class BillableCodeModel {
     static let db = Firestore.firestore();
     
-    static func addNewBillableCode(billableCode: BillableCode, vc: codeAcquiredDelegate){
+    static func addNewBillableCode(billableCode: BillableCode, vc: BillableCodeDelagate){
         
         BillableCodeModel.db.collection("BillableCode").document(billableCode.randomID).setData([
             "billableCodeName": billableCode.billableCode,"costPerHour":billableCode.costPerHour, "description":billableCode.description
@@ -33,17 +33,17 @@ class BillableCodeModel {
                 if error != nil{
                     print("Error in AddNewBillableCode")
                 } else {
-                    vc.didEditCode()
+                    vc.didEditBillableCode()
                 }
             }
     }
     
-    static func deleteBillableCode(billableCode: BillableCode, vc: codeAcquiredDelegate) {
+    static func deleteBillableCode(billableCode: BillableCode, vc: BillableCodeDelagate) {
         db.collection("BillableCode").document(billableCode.randomID).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {
-                vc.didRemoveCode()
+                vc.didRemoveBillableCodeCode()
                 print("Document successfully removed!")
             }
         }
@@ -51,7 +51,7 @@ class BillableCodeModel {
     
     
         
-    static func getBillableCode(vc: codeAcquiredDelegate) {
+    static func getBillableCode(vc: BillableCodeDelagate) {
         print("Getting all billable codes")
         let db = Firestore.firestore();
         var billableCodes = [BillableCode]()
@@ -66,7 +66,7 @@ class BillableCodeModel {
                             let billableCodeObj = document.data() as [String: AnyObject]
                             billableCodes.append(BillableCode(billableCode:billableCodeObj["billableCodeName"] as? String,costPerHour: billableCodeObj["costPerHour"] as? Int, description: billableCodeObj["description"] as? String, randomID: document.documentID))
                         }
-                        vc.didFetchCode(data: billableCodes)
+                        vc.didFetchBillableCode(data: billableCodes)
                     }
                 }
             }
@@ -86,7 +86,7 @@ class BillableCodeModel {
     }
     
         
-    func getNonBillableCode(vc: nonCodeAcquiredDelegate) {
+    func getNonBillableCode(vc: NonBillableCodeDelegate) {
         var nonBillableCodes = [String]()
         let nonBillableCodeRef = BillableCodeModel.db.collection("NonBillableCode")
         nonBillableCodeRef.getDocuments { (querySnapshot, err) in
@@ -100,7 +100,7 @@ class BillableCodeModel {
                             let name = nonBillableCodeObj["nonBillableCodeName"]
                             nonBillableCodes.append(name as! String)
                         }
-                        vc.didFetchCode(data: nonBillableCodes)
+                        vc.didFetchNonBillableCode(data: nonBillableCodes)
                     }
                 }
             }

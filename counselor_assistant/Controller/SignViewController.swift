@@ -9,14 +9,9 @@ import GoogleSignIn
 // [START viewcontroller_interfaces]
 class SignViewController: UIViewController, AdminSignInDelegate {
     func didFetchData(data: Bool) {
-        if data {
-            
-            performSegue(withIdentifier: "SignIn", sender: self)
-            
-            
-        } else{
-            performSegue(withIdentifier: "SignIn", sender: self)
-        }
+        AccountModel.sharedInstance.isAdmin = data;
+        performSegue(withIdentifier: "SignIn", sender: self)
+        print(data)
         
     }
     
