@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kdc-Kw-HDJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kdc-Kw-HDJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -414,7 +414,7 @@
                                 <accessibility key="accessibilityConfiguration" label="Billable Codes"/>
                                 <state key="normal" title="Billable Codes"/>
                                 <connections>
-                                    <segue destination="NM9-Gc-9NF" kind="presentation" modalPresentationStyle="automatic" id="Zcr-PX-wBz"/>
+                                    <segue destination="NM9-Gc-9NF" kind="show" id="Zcr-PX-wBz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF8-mT-DOX">
@@ -422,7 +422,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Program Codes"/>
                                 <connections>
-                                    <segue destination="IyJ-0d-dUi" kind="presentation" id="CUv-qK-Dnb"/>
+                                    <segue destination="IyJ-0d-dUi" kind="show" id="CUv-qK-Dnb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -449,7 +449,7 @@
             <objects>
                 <tableViewController id="NM9-Gc-9NF" customClass="CodesViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="S5N-wg-2qg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -483,6 +483,7 @@
                             <outlet property="delegate" destination="NM9-Gc-9NF" id="whd-Qz-1Db"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Qo9-BQ-OdX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxU-UA-YjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -493,7 +494,7 @@
             <objects>
                 <tableViewController id="IyJ-0d-dUi" customClass="programsTableViewController" customModule="counselor_assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sRH-5w-XX7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -527,10 +528,11 @@
                             <outlet property="delegate" destination="IyJ-0d-dUi" id="2bV-FS-Z7a"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="kzv-Ms-rVD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1m-51-d0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842" y="1522"/>
+            <point key="canvasLocation" x="2845" y="1572"/>
         </scene>
         <!--Detailed Information View Controller-->
         <scene sceneID="Jl5-zh-VyZ">
@@ -878,7 +880,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CA Logo" width="1080" height="1080"/>
-        <image name="chart.pie.fill" catalog="system" width="32" height="32"/>
+        <image name="chart.pie.fill" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3.decrease.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
