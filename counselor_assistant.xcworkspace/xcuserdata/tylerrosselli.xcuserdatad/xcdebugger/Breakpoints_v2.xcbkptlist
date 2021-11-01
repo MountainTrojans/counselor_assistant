@@ -3,4 +3,70 @@
    uuid = "7B2AC63B-53C1-4C5F-ADEE-F799B3E8A623"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B00DD706-9648-43F9-B93E-782515390ADB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "counselor_assistant/Controller/programsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "didEditPrograms()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B00DD706-9648-43F9-B93E-782515390ADB - 226580589d2e5ee6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "counselor_assistant.programsViewController.didEditPrograms() -&gt; ()"
+                  moduleName = "counselor_assistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerrosselli/Documents/counselor_assistant/counselor_assistant/Controller/programsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "166">
+               </Location>
+               <Location
+                  uuid = "B00DD706-9648-43F9-B93E-782515390ADB - 3de5df23a33018d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in counselor_assistant.programsViewController.didEditPrograms() -&gt; ()"
+                  moduleName = "counselor_assistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerrosselli/Documents/counselor_assistant/counselor_assistant/Controller/programsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E09B5CE7-A232-4A17-BDA5-BB6F95DDC969"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "counselor_assistant/Controller/CodesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
