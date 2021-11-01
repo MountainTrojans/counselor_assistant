@@ -47,6 +47,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3y-lU-iap">
                                                 <rect key="frame" x="247.5" y="0.0" width="126.5" height="30"/>
                                                 <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="popUpPicker:" destination="a23-By-A7d" eventType="touchUpInside" id="WVc-S3-qx7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -62,6 +65,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-Pp-fwx">
                                                 <rect key="frame" x="292" y="0.0" width="82" height="30"/>
                                                 <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="popUpPicker:" destination="a23-By-A7d" eventType="touchUpInside" id="C2v-sZ-Qcu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -77,6 +83,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-QB-AqP">
                                                 <rect key="frame" x="220" y="0.0" width="154" height="30"/>
                                                 <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="popUpPicker:" destination="a23-By-A7d" eventType="touchUpInside" id="wXG-vw-zOe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -277,13 +286,13 @@
                     <connections>
                         <outlet property="CDI" destination="Cjx-Mh-Hya" id="1Jh-za-Zl5"/>
                         <outlet property="Notes" destination="YLe-cf-3Yz" id="w6X-rZ-12L"/>
-                        <outlet property="billableCode" destination="d3y-lU-iap" id="VR4-ra-mzd"/>
+                        <outlet property="billCodeBtn" destination="d3y-lU-iap" id="9us-85-vgG"/>
                         <outlet property="clientInitials" destination="Xrp-Mn-Bbu" id="NZH-Xu-MMR"/>
                         <outlet property="documentationMinutes" destination="qc7-SX-Fte" id="NPt-IA-wy8"/>
-                        <outlet property="nonBillableCodeSelection" destination="4wa-QB-AqP" id="TJy-0U-RyR"/>
+                        <outlet property="nonBillableCodeBtn" destination="4wa-QB-AqP" id="rqL-5u-mvH"/>
                         <outlet property="noteApproved" destination="0XE-ZQ-0VG" id="eZz-ak-O3K"/>
                         <outlet property="noteWritten" destination="X6R-tx-gUs" id="75a-8L-OOs"/>
-                        <outlet property="programSelection" destination="3pc-Pp-fwx" id="XZC-Il-q5p"/>
+                        <outlet property="programBtn" destination="3pc-Pp-fwx" id="sBU-ws-WdS"/>
                         <outlet property="roundTripMinutes" destination="rVb-jW-8l1" id="RsD-X5-8Wa"/>
                         <outlet property="serviceMinutes" destination="XH3-M5-ouc" id="eIF-Y0-4yZ"/>
                         <outlet property="totalRoundTripMiles" destination="Y7k-3n-j4q" id="vJw-pW-PX9"/>
@@ -488,14 +497,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="programCodeCell" id="IVi-au-0IV" customClass="programsTableViewCell" customModule="counselor_assistant" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IVi-au-0IV" id="AvL-AE-Vnw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="programLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-ev-QRh">
-                                            <rect key="frame" x="154" y="11" width="106" height="21.5"/>
+                                            <rect key="frame" x="154" y="11" width="106" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

@@ -45,12 +45,9 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
     
     
     @IBOutlet weak var billCodeBtn: UIButton!
-    
-    
     @IBOutlet weak var clientInitials: UITextField!
-
-    @IBOutlet weak var programSelection: UIButton!
-    @IBOutlet weak var nonBillableCodeSelection: UIButton!
+    @IBOutlet weak var programBtn: UIButton!
+    @IBOutlet weak var nonBillableCodeBtn: UIButton!
     @IBOutlet weak var totalRoundTripMiles: UITextField!
     @IBOutlet weak var roundTripMinutes: UITextField!
     @IBOutlet weak var serviceMinutes: UITextField!
@@ -90,6 +87,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         var selectedRow = 0
         //var selectedRowTextColor = 0
         
+    
     var BillableCodeArray: [BillableCode] = []
         
     @IBAction func popUpPicker(_ sender: UIButton)
@@ -111,11 +109,59 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         
         
         
-        if(sender == billCodeBtn){
+        if(sender == billCodeBtn) {
             pickerView.tag = 1
             
             
-            let alert = UIAlertController(title: "Select Background Colour", message: "", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "Select Billable Code", message: "", preferredStyle: .actionSheet)
+            
+            alert.setValue(vc, forKey: "contentViewController")
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
+//                self.selectedRow = pickerView.selectedRow(inComponent: 0)
+//                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
+//                let selected = Array(self.backGroundColours)[self.selectedRow]
+//                //let selectedTextColor = Array(self.backGroundColours)[self.selectedRowTextColor]
+//                let colour = selected.value
+//                let name = selected.key
+//                self.view.backgroundColor = colour
+//                self.pickerViewButton.setTitle(name, for: .normal)
+//                //self.pickerViewButton.setTitleColor(selectedTextColor.value, for: .normal)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else if (sender == programBtn) {
+            pickerView.tag = 2
+            
+            
+            let alert = UIAlertController(title: "Select Program", message: "", preferredStyle: .actionSheet)
+            
+            alert.setValue(vc, forKey: "contentViewController")
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
+//                self.selectedRow = pickerView.selectedRow(inComponent: 0)
+//                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
+//                let selected = Array(self.backGroundColours)[self.selectedRow]
+//                //let selectedTextColor = Array(self.backGroundColours)[self.selectedRowTextColor]
+//                let colour = selected.value
+//                let name = selected.key
+//                self.view.backgroundColor = colour
+//                self.pickerViewButton.setTitle(name, for: .normal)
+//                //self.pickerViewButton.setTitleColor(selectedTextColor.value, for: .normal)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else if (sender == nonBillableCodeBtn) {
+            pickerView.tag = 3
+            
+            
+            let alert = UIAlertController(title: "Select Non-billablecode", message: "", preferredStyle: .actionSheet)
             
             alert.setValue(vc, forKey: "contentViewController")
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
@@ -136,16 +182,19 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
             self.present(alert, animated: true, completion: nil)
             
         }
+        
             
            
         }
         
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
             
-            if(pickerView.tag == 1 ){
+            if(pickerView.tag == 1 ) {
                 return BillableCodeArray[row].billableCode ?? ""
-            } else if(pickerView.tag == 2){
-                
+            } else if(pickerView.tag == 2) {
+                return BillableCodeArray[row].billableCode ?? ""
+            } else if (pickerView.tag == 3) {
+                return BillableCodeArray[row].billableCode ?? ""
             }
             
             return ""
@@ -160,7 +209,13 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
         {
             if(pickerView.tag == 1 ){
-                BillableCodeArray.count
+                return BillableCodeArray.count
+            }
+            else if (pickerView.tag == 2) {
+                return BillableCodeArray.count
+            }
+            else if (pickerView.tag == 3) {
+                return BillableCodeArray.count
             }
             
             return 0;
