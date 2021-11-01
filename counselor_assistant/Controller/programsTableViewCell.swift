@@ -1,15 +1,15 @@
 //
-//  codesTableViewCell.swift
+//  programsTableViewCell.swift
 //  counselor_assistant
 //
-//  Created by Tyler Rosselli on 10/22/21.
+//  Created by Tyler Rosselli on 10/31/21.
 //
 
 import UIKit
 
-class codesTableViewCell: UITableViewCell {
+class programsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var billableCodeLabel: UILabel!
+    @IBOutlet weak var programLable: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -29,6 +29,7 @@ class AccountManager {
             if let document = document, document.exists {
                 let accountObj = document.data() as [String: AnyObject]?
                 if ((accountObj?["isAdmin"] as! NSNumber) != 0) {
+            
                     vc.didFetchData(data: true)
                 } else {
                     vc.didFetchData(data: false)

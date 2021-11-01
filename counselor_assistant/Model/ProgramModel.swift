@@ -46,6 +46,7 @@ class ProgramModel {
     
         
     static func getPrograms(vc: programAcquiredDelegate) {
+        print("Made it to get programs")
         var programs = [Program]()
         let programRef = ProgramModel.db.collection("Program")
         programRef.getDocuments { (querySnapshot, err) in
@@ -58,6 +59,7 @@ class ProgramModel {
                             let programObj = document.data() as [String: AnyObject]
                             programs.append(Program(programName: programObj["programName"] as? String, programTotal: programObj["programTotal"] as? Double, moneyLeft: programObj["moneyLeft"] as? Double, description: programObj["description"] as? String, randomID: document.documentID))
                         }
+                        print("Found Programs" + String(programs.count))
                         vc.didFetchPrograms(data: programs)
                     }
                 }

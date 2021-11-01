@@ -38,7 +38,7 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
 //        self.tableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 //        visitTableViews.delegate = self
 //        visitTableViews.dataSource = self
-        VisitModel.loadExistingInfo(vc: self, email: AccountModel.sharedInstance.gmail ?? "test2")
+        VisitModel.loadExistingInfo(vc: self, email: AccountModel.sharedInstance.gmail!)
         UserModel.getUser(vc: self)
         
       //  VisitModel.shared.loadExistingInfo()
@@ -58,6 +58,7 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VisitCell") as! VisitTableViewCell
         let visit = visits[indexPath.row]
+        print("Credentials:" + visit.clientInitials!)
         cell.initials.text = visit.clientInitials
         cell.date.text = visit.notes
         

@@ -36,6 +36,10 @@
 		A59A26AB27234EB500D21B25 /* accountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A26AA27234EB500D21B25 /* accountViewController.swift */; };
 		A59A26AD2723517400D21B25 /* CodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A26AC2723517400D21B25 /* CodesViewController.swift */; };
 		A59A26AF2723591200D21B25 /* codesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A26AE2723591200D21B25 /* codesTableViewCell.swift */; };
+		A59A26B12723BA9100D21B25 /* detailedInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A26B02723BA9100D21B25 /* detailedInformationViewController.swift */; };
+		A59A761E272F879E00E9529F /* programsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A761D272F879E00E9529F /* programsTableViewController.swift */; };
+		A59A7623272F8BD700E9529F /* programsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A7622272F8BD700E9529F /* programsTableViewCell.swift */; };
+		A59A7625272F929500E9529F /* programsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A7624272F929500E9529F /* programsViewController.swift */; };
 		AF1E5A0E5C3B0E605DBEC173 /* Pods_counselor_assistant_counselor_assistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92029F5E997FD5EDB96785F4 /* Pods_counselor_assistant_counselor_assistantUITests.framework */; };
 		C745AAB9A220520B448A4B58 /* Pods_counselor_assistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9229094BF45677112856D7C /* Pods_counselor_assistantTests.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +100,10 @@
 		A59A26AA27234EB500D21B25 /* accountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountViewController.swift; sourceTree = "<group>"; };
 		A59A26AC2723517400D21B25 /* CodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodesViewController.swift; sourceTree = "<group>"; };
 		A59A26AE2723591200D21B25 /* codesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codesTableViewCell.swift; sourceTree = "<group>"; };
+		A59A26B02723BA9100D21B25 /* detailedInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedInformationViewController.swift; sourceTree = "<group>"; };
+		A59A761D272F879E00E9529F /* programsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = programsTableViewController.swift; sourceTree = "<group>"; };
+		A59A7622272F8BD700E9529F /* programsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = programsTableViewCell.swift; sourceTree = "<group>"; };
+		A59A7624272F929500E9529F /* programsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = programsViewController.swift; sourceTree = "<group>"; };
 		D9229094BF45677112856D7C /* Pods_counselor_assistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_counselor_assistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCE7DE581E11E5840AF57B6 /* Pods_counselor_assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_counselor_assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17537894073F7B7FA55A122 /* Pods-counselor_assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistant.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistant/Pods-counselor_assistant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +242,10 @@
 				A59A26AA27234EB500D21B25 /* accountViewController.swift */,
 				A59A26AC2723517400D21B25 /* CodesViewController.swift */,
 				A59A26AE2723591200D21B25 /* codesTableViewCell.swift */,
+				A59A26B02723BA9100D21B25 /* detailedInformationViewController.swift */,
+				A59A761D272F879E00E9529F /* programsTableViewController.swift */,
+				A59A7622272F8BD700E9529F /* programsTableViewCell.swift */,
+				A59A7624272F929500E9529F /* programsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -538,11 +550,15 @@
 				529E6CB82709678E00BE8D07 /* AccountModel.swift in Sources */,
 				1C1E675F27234F1F00801D51 /* Program.swift in Sources */,
 				1C1E67612723A5E400801D51 /* ProgramModel.swift in Sources */,
+				A59A7623272F8BD700E9529F /* programsTableViewCell.swift in Sources */,
 				1CB4867426F8EE1000A4D469 /* ViewController.swift in Sources */,
 				A59A26AF2723591200D21B25 /* codesTableViewCell.swift in Sources */,
 				529E6CB6270955C400BE8D07 /* SignViewController.swift in Sources */,
+				A59A26B12723BA9100D21B25 /* detailedInformationViewController.swift in Sources */,
 				1C59F1F927136B640030A93B /* AccountManager.swift in Sources */,
 				A59A26AB27234EB500D21B25 /* accountViewController.swift in Sources */,
+				A59A7625272F929500E9529F /* programsViewController.swift in Sources */,
+				A59A761E272F879E00E9529F /* programsTableViewController.swift in Sources */,
 				1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */,
 				1CB4867226F8EE1000A4D469 /* SceneDelegate.swift in Sources */,
 				507950A9271A259500EC4592 /* VisitTableViewCell.swift in Sources */,
