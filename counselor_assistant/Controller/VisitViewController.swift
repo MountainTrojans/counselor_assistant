@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
                                 UserDelagate, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -35,8 +38,7 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
 //        self.tableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 //        visitTableViews.delegate = self
 //        visitTableViews.dataSource = self
-        
-        VisitModel.loadExistingInfo(vc: self)
+        VisitModel.loadExistingInfo(vc: self, email: AccountModel.sharedInstance.gmail ?? "test2")
         UserModel.getUser(vc: self)
         
       //  VisitModel.shared.loadExistingInfo()
@@ -106,15 +108,9 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
         alert.setValue(vc, forKey: "contentViewController")
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in }))
         alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
-//                self.selectedRow = pickerView.selectedRow(inComponent: 0)
-//                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
-//                let selected = Array(self.backGroundColours)[self.selectedRow]
-//                //let selectedTextColor = Array(self.backGroundColours)[self.selectedRowTextColor]
-//                let colour = selected.value
-//                let name = selected.key
-//                self.view.backgroundColor = colour
-//                self.pickerViewButton.setTitle(name, for: .normal)
-//                //self.pickerViewButton.setTitleColor(selectedTextColor.value, for: .normal)
+            self.selectedRow = pickerView.selectedRow(inComponent: 0)
+            let selected = self.users[self.selectedRow]
+            VisitModel.loadExistingInfo(vc: self, email: selected)
         }))
         self.present(alert, animated: true, completion: nil)
     }
