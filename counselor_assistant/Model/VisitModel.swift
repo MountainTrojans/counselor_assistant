@@ -26,11 +26,12 @@ class VisitModel
     static let db = Firestore.firestore()
     static let username: String = accountModel.gmail ?? "test2"
     
-    static func loadExistingInfo(vc: visitsAcquiredDelegate) {
+    static func loadExistingInfo(vc: visitsAcquiredDelegate, email: String) {
         var visits = Array<Visit>();
        
-        print("VisitHistory_"+username)
-        let uploadedVideosRef = db.collection("VisitHistory_"+username)
+//        print("VisitHistory_"+username)
+//        let uploadedVideosRef = db.collection("VisitHistory_"+username)
+        let uploadedVideosRef = db.collection("VisitHistory_"+email)
         uploadedVideosRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
