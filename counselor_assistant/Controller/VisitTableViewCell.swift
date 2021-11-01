@@ -9,6 +9,9 @@ import UIKit
 
 class VisitTableViewCell: UITableViewCell {
 
+    @IBOutlet var initials: UILabel!
+    @IBOutlet var date: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

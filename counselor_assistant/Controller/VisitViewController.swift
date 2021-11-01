@@ -53,7 +53,9 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VisitCell") as! VisitTableViewCell
         let visit = visits[indexPath.row]
-        //cell.labelView.text = visit.clientInitials ?? nil
+        cell.initials.text = visit.clientInitials
+        cell.date.text = visit.notes
+        
         return cell
     }
     
