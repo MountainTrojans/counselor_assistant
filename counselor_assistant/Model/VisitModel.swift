@@ -24,7 +24,7 @@ class VisitModel
     static let accountModel = AccountModel.sharedInstance
     
     static let db = Firestore.firestore()
-    static let username: String = accountModel.gmail ?? "test2"
+    static let username: String = accountModel.gmail ?? "noEmail"
     
     static func loadExistingInfo(vc: visitsAcquiredDelegate, email: String) {
         var visits = Array<Visit>();
@@ -46,9 +46,9 @@ class VisitModel
                             visits.append(
                                 Visit(
                                     clientInitials: visitObj["clientInitials"] as? String,
-                                    billableCodeSelection: visitObj["billableCodeSelection"] as? Int,
-                                    programSelection: visitObj["programSelection"] as? Int,
-                                    nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? Int,
+                                    billableCodeSelection: visitObj["billableCodeSelection"] as? String,
+                                    programSelection: visitObj["programSelection"] as? String,
+                                    nonBillableCodeSelection: visitObj["nonBillableCodeSelection"] as? String,
                                     totalRoundTripMiles: visitObj["totalRoundTripMiles"] as? Double,
                                     totalRoundTripMinutes: visitObj["totalRoundTripMinutes"] as? Double,
                                     serviceMinutes: visitObj["serviceMinutes"] as? Double,

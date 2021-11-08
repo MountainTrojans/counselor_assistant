@@ -38,8 +38,7 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
 //        self.tableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 //        visitTableViews.delegate = self
 //        visitTableViews.dataSource = self
-        VisitModel.loadExistingInfo(vc: self, email: AccountModel.sharedInstance.gmail!)
-        UserModel.getUser(vc: self)
+        
         
       //  VisitModel.shared.loadExistingInfo()
         // Do any additional setup after loading the view.
@@ -48,6 +47,8 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
+            VisitModel.loadExistingInfo(vc: self, email: AccountModel.sharedInstance.gmail!)
+            UserModel.getUser(vc: self)
            tableView.reloadData()
        }
 

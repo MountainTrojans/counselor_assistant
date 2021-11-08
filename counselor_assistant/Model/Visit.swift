@@ -10,7 +10,7 @@ import Foundation
 class Visit
 {
     //need to add the client initials as a parameter to the internal init
-    internal init( clientInitials: String? = nil,billableCodeSelection: Int? = nil, programSelection: Int? = nil, nonBillableCodeSelection: Int? = nil, totalRoundTripMiles: Double? = nil, totalRoundTripMinutes: Double? = nil, serviceMinutes: Double? = nil, documentationMinutes: Double? = nil, noteWritten: Bool? = nil, noteApproved: Bool? = nil, CDI: Bool? = nil, notes: String? = nil, randomID: String = UUID.init().uuidString) {
+    internal init( clientInitials: String? = nil,billableCodeSelection: String? = nil, programSelection: String? = nil, nonBillableCodeSelection: String? = nil, totalRoundTripMiles: Double? = nil, totalRoundTripMinutes: Double? = nil, serviceMinutes: Double? = nil, documentationMinutes: Double? = nil, noteWritten: Bool? = nil, noteApproved: Bool? = nil, CDI: Bool? = nil, notes: String? = nil, randomID: String = UUID.init().uuidString) {
         self.clientInitials = clientInitials
         self.billableCodeSelection = billableCodeSelection
         self.programSelection = programSelection
@@ -26,9 +26,9 @@ class Visit
         self.randomID = randomID
     }
     var clientInitials: String?;
-    var billableCodeSelection: Int?;
-    var programSelection: Int?;
-    var nonBillableCodeSelection: Int?;
+    var billableCodeSelection: String?;
+    var programSelection: String?;
+    var nonBillableCodeSelection: String?;
     var totalRoundTripMiles: Double?;
     var totalRoundTripMinutes: Double?;
     var serviceMinutes: Double?;
