@@ -116,9 +116,9 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
         let tripminutes: Double? = Double(roundTripMinutes.text!)
         let addserviceMinutes:Double? = Double(serviceMinutes.text!)
         let documentMinutes:Double? = Double(documentationMinutes.text!)
-        let notewritten:Bool? = false
-        let noteapproved: Bool? = false
-        let cdi:Bool? = false
+        let notewritten:Bool? = noteWritten.isOn
+        let noteapproved: Bool? = noteApproved.isOn
+        let cdi:Bool? = CDI.isOn
         let today = Date()
         let formatter1 = DateFormatter()
         formatter1.dateStyle = .short
@@ -127,6 +127,9 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
         let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi, date: currentDate);
         VisitModel.shared.addNewVisit(visit: visit, vc: self)
         self.navigationController?.popViewController(animated: true)
+        print(BillCodeVar)
+        print(ProgramVar)
+        print(NonBillableVar)
     }
         
     @IBAction func popUpPicker(_ sender: UIButton)
@@ -160,15 +163,6 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
             
             alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
                 self.BillCodeVar = self.BillableCodeArray[pickerView.selectedRow(inComponent: 0)].billableCode ?? ""
-//                self.selectedRow = pickerView.selectedRow(inCompone0nt: 0)
-//                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
-//                let selected = Array(self.backGroundColours)[self.selectedRow]
-//                //let selectedTextColor = Array(self.backGroundColours)[self.selectedRowTextColor]
-//                let colour = selected.value
-//                let name = selected.key
-//                self.view.backgroundColor = colour
-//                self.pickerViewButton.setTitle(name, for: .normal)
-//                //self.pickerViewButton.setTitleColor(selectedTextColor.value, for: .normal)
             }))
             
             self.present(alert, animated: true, completion: nil)
@@ -188,15 +182,6 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
                     print(program.programName)
                 }
                 self.ProgramVar = self.ProgramArray[pickerView.selectedRow(inComponent: 0)].programName ?? ""
-//                self.selectedRow = pickerView.selectedRow(inComponent: 0)
-//                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
-//                let selected = Array(self.backGroundColours)[self.selectedRow]
-//                //let selectedTextColor = Array(self.backGroundColours)[self.selectedRowTextColor]
-//                let colour = selected.value
-//                let name = selected.key
-//                self.view.backgroundColor = colour
-//                self.pickerViewButton.setTitle(name, for: .normal)
-//                //self.pickerViewButton.setTitleColor(selectedTextColor.value, for: .normal)
             }))
             
             self.present(alert, animated: true, completion: nil)
@@ -213,15 +198,6 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
             
             alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
                 self.NonBillableVar = self.NonBillableCodeArray[pickerView.selectedRow(inComponent: 0)]
-//                self.selectedRow = pickerView.selectedRow(inComponent: 0)
-//                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
-//                let selected = Array(self.backGroundColours)[self.selectedRow]
-//                //let selectedTextColor = Array(self.backGroundColours)[self.selectedRowTextColor]
-//                let colour = selected.value
-//                let name = selected.key
-//                self.view.backgroundColor = colour
-//                self.pickerViewButton.setTitle(name, for: .normal)
-//                //self.pickerViewButton.setTitleColor(selectedTextColor.value, for: .normal)
             }))
             
             self.present(alert, animated: true, completion: nil)
