@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquiredDelegate ,
+class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCodeDelegate, visitsAcquiredDelegate ,
                           UIPickerViewDelegate, UIPickerViewDataSource, programAcquiredDelegate{
     func didFetchPrograms(data: [Program]) {
         ProgramArray = data
@@ -48,6 +48,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
     func didFetchNonBillableCode(data: [String]) {
         // do something with data
         NonBillableCodeArray = data
+    
     }
     func didFetchCode(data: [String]) {
         // do something with data
@@ -56,6 +57,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
     override func viewDidLoad() {
         BillableCodeModel.getBillableCode(vc: self)
         ProgramModel.getPrograms(vc: self)
+        BillableCodeModel.getNonBillableCode(vc: self)
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -226,7 +228,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
             } else if(pickerView.tag == 2) {
                 return ProgramArray[row].programName ?? ""
             } else if (pickerView.tag == 3) {
-                return BillableCodeArray[row].billableCode ?? ""
+                return NonBillableCodeArray[row]
             }
             
             return ""
@@ -247,7 +249,8 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
                 return ProgramArray.count
             }
             else if (pickerView.tag == 3) {
-                return BillableCodeArray.count
+                print("NonBillableCodeArray", NonBillableCodeArray.count)
+                return NonBillableCodeArray.count
             }
             
             return 0;

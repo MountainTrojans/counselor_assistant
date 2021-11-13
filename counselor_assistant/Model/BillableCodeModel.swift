@@ -74,7 +74,7 @@ class BillableCodeModel {
         
     }
     
-    func addNewNonBillableCode(name: String){
+    static func addNewNonBillableCode(name: String){
         let randomID = UUID.init().uuidString
         BillableCodeModel.db.collection("NonBillableCode").document(randomID).setData([
             "nonBillableCodeName": name
@@ -86,7 +86,7 @@ class BillableCodeModel {
     }
     
         
-    func getNonBillableCode(vc: NonBillableCodeDelegate) {
+    static func getNonBillableCode(vc: NonBillableCodeDelegate) {
         var nonBillableCodes = [String]()
         let nonBillableCodeRef = BillableCodeModel.db.collection("NonBillableCode")
         nonBillableCodeRef.getDocuments { (querySnapshot, err) in
@@ -99,6 +99,7 @@ class BillableCodeModel {
                             let nonBillableCodeObj = document.data() as [String: AnyObject]
                             let name = nonBillableCodeObj["nonBillableCodeName"]
                             nonBillableCodes.append(name as! String)
+                            print("!!",name as! String)
                         }
                         vc.didFetchNonBillableCode(data: nonBillableCodes)
                     }
