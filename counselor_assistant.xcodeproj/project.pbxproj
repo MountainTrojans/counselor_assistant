@@ -24,6 +24,7 @@
 		1CEA4F1A26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1B26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		1CEA4F1C26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
+		50558C7E273F8502006C74BD /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50558C7D273F8502006C74BD /* AnalyticsViewController.swift */; };
 		507950A7271A198A00EC4592 /* VisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A6271A198A00EC4592 /* VisitViewController.swift */; };
 		507950A9271A259500EC4592 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A8271A259400EC4592 /* VisitTableViewCell.swift */; };
 		50FA51BF272FDD3F0010A0A2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA51BE272FDD3F0010A0A2 /* UserModel.swift */; };
@@ -85,6 +86,7 @@
 		1CDF5ADF27095853004967AB /* VisitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitModel.swift; sourceTree = "<group>"; };
 		1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46057039AB9C79C668994C01 /* Pods-counselor_assistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistantTests.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistantTests/Pods-counselor_assistantTests.debug.xcconfig"; sourceTree = "<group>"; };
+		50558C7D273F8502006C74BD /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		507950A6271A198A00EC4592 /* VisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitViewController.swift; sourceTree = "<group>"; };
 		507950A8271A259400EC4592 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		50FA51BE272FDD3F0010A0A2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				A59A761D272F879E00E9529F /* programsTableViewController.swift */,
 				A59A7622272F8BD700E9529F /* programsTableViewCell.swift */,
 				A59A7624272F929500E9529F /* programsViewController.swift */,
+				50558C7D273F8502006C74BD /* AnalyticsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			files = (
 				524107F62713FE5F00D6F11E /* AdminViewController.swift in Sources */,
 				A59A26AD2723517400D21B25 /* CodesViewController.swift in Sources */,
+				50558C7E273F8502006C74BD /* AnalyticsViewController.swift in Sources */,
 				1CDF5ADC270954C5004967AB /* Visit.swift in Sources */,
 				1C59F1F72712AB330030A93B /* BillableCodeModel.swift in Sources */,
 				1CB6F539272FC19B00C05AC8 /* newVisitController.swift in Sources */,
