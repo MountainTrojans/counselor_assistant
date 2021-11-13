@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquiredDelegate ,
+class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCodeDelegate, visitsAcquiredDelegate ,
                           UIPickerViewDelegate, UIPickerViewDataSource, programAcquiredDelegate{
     func didFetchPrograms(data: [Program]) {
         ProgramArray = data
@@ -45,9 +45,10 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         BillableCodeArray = data
     }
 
-    func didFetchNonBillableCode(data: [BillableCode]) {
+    func didFetchNonBillableCode(data: [String]) {
         // do something with data
         NonBillableCodeArray = data
+    
     }
     func didFetchCode(data: [String]) {
         // do something with data
@@ -56,6 +57,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
     override func viewDidLoad() {
         BillableCodeModel.getBillableCode(vc: self)
         ProgramModel.getPrograms(vc: self)
+        BillableCodeModel.getNonBillableCode(vc: self)
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -89,7 +91,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         //var selectedRowTextColor = 0
     var BillableCodeArray: [BillableCode] = []
     var ProgramArray: [Program] = []
-    var NonBillableCodeArray: [BillableCode] = []
+    var NonBillableCodeArray: [String] = []
     
     
     
@@ -105,7 +107,15 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         let notewritten:Bool? = false
         let noteapproved: Bool? = false
         let cdi:Bool? = false
-        let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
+//
+//
+//
+        let today = Date()
+        let formatter1 = DateFormatter()
+        formatter1.dateStyle = .short
+        let currentDate = formatter1.string(from: today)
+        
+        let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi, date: currentDate);
         VisitModel.shared.addNewVisit(visit: visit, vc: self)
         self.navigationController?.popViewController(animated: true)
         print(BillCodeVar)
@@ -197,7 +207,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
             }))
             
             alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
-                self.NonBillableVar = self.BillableCodeArray[pickerView.selectedRow(inComponent: 0)].billableCode ?? ""
+                self.NonBillableVar = self.NonBillableCodeArray[pickerView.selectedRow(inComponent: 0)]
 //                self.selectedRow = pickerView.selectedRow(inComponent: 0)
 //                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
 //                let selected = Array(self.backGroundColours)[self.selectedRow]
@@ -224,7 +234,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
             } else if(pickerView.tag == 2) {
                 return ProgramArray[row].programName ?? ""
             } else if (pickerView.tag == 3) {
-                return BillableCodeArray[row].billableCode ?? ""
+                return NonBillableCodeArray[row]
             }
             
             return ""
@@ -245,7 +255,8 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
                 return ProgramArray.count
             }
             else if (pickerView.tag == 3) {
-                return BillableCodeArray.count
+                print("NonBillableCodeArray", NonBillableCodeArray.count)
+                return NonBillableCodeArray.count
             }
             
             return 0;
