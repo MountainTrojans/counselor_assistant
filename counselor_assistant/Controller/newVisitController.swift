@@ -45,7 +45,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         BillableCodeArray = data
     }
 
-    func didFetchNonBillableCode(data: [BillableCode]) {
+    func didFetchNonBillableCode(data: [String]) {
         // do something with data
         NonBillableCodeArray = data
     }
@@ -83,7 +83,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         //var selectedRowTextColor = 0
     var BillableCodeArray: [BillableCode] = []
     var ProgramArray: [Program] = []
-    var NonBillableCodeArray: [BillableCode] = []
+    var NonBillableCodeArray: [String] = []
     
     
     
@@ -194,7 +194,7 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
             }))
             
             alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
-                self.NonBillableVar = self.BillableCodeArray[pickerView.selectedRow(inComponent: 0)].billableCode ?? ""
+                self.NonBillableVar = self.NonBillableCodeArray[pickerView.selectedRow(inComponent: 0)]
 //                self.selectedRow = pickerView.selectedRow(inComponent: 0)
 //                //self.selectedRowTextColor = pickerView.selectedRow(inComponent: 1)
 //                let selected = Array(self.backGroundColours)[self.selectedRow]
