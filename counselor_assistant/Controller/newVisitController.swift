@@ -64,6 +64,12 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
     
     override func viewWillAppear(_ animated: Bool) {
         clientInitials.text = clientInitialsText
+        totalRoundTripMiles.text = "\(totalRoundTripMilestextText)"
+        roundTripMinutes.text = "\(roundTripMinutesText)"
+        serviceMinutes.text = "\(serviceMinutesText)"
+        documentationMinutes.text = "\(documentationMinutesText)"
+        serviceMinutes.text = "\(serviceMinutesText)"
+        Notes.text = NotesText
     }
     
     
@@ -82,13 +88,19 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
     @IBOutlet weak var submitButton: UIBarButtonItem!
     
     var clientInitialsText:String = ""
-    var BillCodeVar:String = "";
-    var ProgramVar:String = "";
-    var NonBillableVar:String = "";
+    var totalRoundTripMilestextText:Double = 0
+    var roundTripMinutesText:Double = 0
+    var serviceMinutesText:Double = 0
+    var documentationMinutesText:Double = 0
+    var NotesText:String = ""
+    
+    
+    var BillCodeVar:String = ""
+    var ProgramVar:String = ""
+    var NonBillableVar:String = ""
     let screenWidth = UIScreen.main.bounds.width - 10
-        let screenHeight = UIScreen.main.bounds.height / 2
-        var selectedRow = 0
-        //var selectedRowTextColor = 0
+    let screenHeight = UIScreen.main.bounds.height / 2
+    var selectedRow = 0
     var BillableCodeArray: [BillableCode] = []
     var ProgramArray: [Program] = []
     var NonBillableCodeArray: [String] = []
@@ -107,9 +119,6 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
         let notewritten:Bool? = false
         let noteapproved: Bool? = false
         let cdi:Bool? = false
-//
-//
-//
         let today = Date()
         let formatter1 = DateFormatter()
         formatter1.dateStyle = .short
@@ -118,10 +127,6 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
         let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi, date: currentDate);
         VisitModel.shared.addNewVisit(visit: visit, vc: self)
         self.navigationController?.popViewController(animated: true)
-        print(BillCodeVar)
-        print(ProgramVar)
-        print(NonBillableVar)
-
     }
         
     @IBAction func popUpPicker(_ sender: UIButton)
