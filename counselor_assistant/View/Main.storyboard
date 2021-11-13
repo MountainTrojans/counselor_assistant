@@ -282,6 +282,9 @@
                                     <action selector="submitVisitTapped:" destination="a23-By-A7d" eventType="touchUpInside" id="2Nh-Lu-G8T"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <action selector="submitLabel:" destination="a23-By-A7d" id="Gpt-IY-MKF"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -296,6 +299,7 @@
                         <outlet property="programBtn" destination="3pc-Pp-fwx" id="sBU-ws-WdS"/>
                         <outlet property="roundTripMinutes" destination="rVb-jW-8l1" id="RsD-X5-8Wa"/>
                         <outlet property="serviceMinutes" destination="XH3-M5-ouc" id="eIF-Y0-4yZ"/>
+                        <outlet property="submitButton" destination="Ia5-Y9-xtY" id="EiF-df-f8E"/>
                         <outlet property="totalRoundTripMiles" destination="Y7k-3n-j4q" id="vJw-pW-PX9"/>
                     </connections>
                 </viewController>
@@ -729,7 +733,7 @@
                                 <connections>
                                     <outlet property="date" destination="RLM-p5-2Dh" id="9Pk-1p-o2b"/>
                                     <outlet property="initials" destination="lp2-kT-iXr" id="1rK-dg-d6e"/>
-                                    <segue destination="a23-By-A7d" kind="show" id="Z9C-MN-qEW"/>
+                                    <segue destination="a23-By-A7d" kind="show" identifier="ClickView" id="Z9C-MN-qEW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -755,7 +759,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Visit"/>
                                 <connections>
-                                    <segue destination="a23-By-A7d" kind="show" id="de8-UI-eXv"/>
+                                    <segue destination="a23-By-A7d" kind="show" identifier="AddVisit" id="de8-UI-eXv"/>
                                 </connections>
                             </button>
                         </barButtonItem>

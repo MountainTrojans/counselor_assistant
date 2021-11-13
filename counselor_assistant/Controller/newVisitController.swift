@@ -60,6 +60,10 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        clientInitials.text = clientInitialsText
+    }
+    
     
     @IBOutlet weak var billCodeBtn: UIButton!
     @IBOutlet weak var clientInitials: UITextField!
@@ -73,7 +77,9 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
     @IBOutlet weak var noteApproved: UISwitch!
     @IBOutlet weak var CDI: UISwitch!
     @IBOutlet weak var Notes: UITextField!
+    @IBOutlet weak var submitButton: UIBarButtonItem!
     
+    var clientInitialsText:String = ""
     var BillCodeVar:String = "";
     var ProgramVar:String = "";
     var NonBillableVar:String = "";
@@ -99,9 +105,6 @@ class NewVisitController: UIViewController, BillableCodeDelagate, visitsAcquired
         let notewritten:Bool? = false
         let noteapproved: Bool? = false
         let cdi:Bool? = false
-//
-//
-//
         let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi)
         VisitModel.shared.addNewVisit(visit: visit, vc: self)
         self.navigationController?.popViewController(animated: true)

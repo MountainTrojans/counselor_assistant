@@ -73,7 +73,16 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
            if let newVisitcon = segue.destination as? NewVisitController{
                 if let selectedIndex = tableView.indexPathForSelectedRow?.row{
                     print("selecting" + String(selectedIndex))
-               }
+               
+                   if let identity = segue.identifier{
+                       if identity == "ClickView"{
+                           newVisitcon.submitButton.customView?.isHidden = true
+                           
+                           newVisitcon.clientInitialsText = visits[selectedIndex].clientInitials ?? ""
+                           
+                       }
+                   }
+                }
            }
         
     }
