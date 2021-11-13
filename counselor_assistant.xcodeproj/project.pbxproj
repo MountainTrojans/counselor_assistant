@@ -26,6 +26,7 @@
 		1CEA4F1C26FCF6AF00EB4385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CEA4F1926FCF6AF00EB4385 /* GoogleService-Info.plist */; };
 		50558C7E273F8502006C74BD /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50558C7D273F8502006C74BD /* AnalyticsViewController.swift */; };
 		507950A7271A198A00EC4592 /* VisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A6271A198A00EC4592 /* VisitViewController.swift */; };
+		507950A7271A198A00EC4592 /* VisitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A6271A198A00EC4592 /* VisitTableViewController.swift */; };
 		507950A9271A259500EC4592 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507950A8271A259400EC4592 /* VisitTableViewCell.swift */; };
 		50FA51BF272FDD3F0010A0A2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA51BE272FDD3F0010A0A2 /* UserModel.swift */; };
 		524107F62713FE5F00D6F11E /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524107F52713FE5F00D6F11E /* AdminViewController.swift */; };
@@ -88,6 +89,7 @@
 		46057039AB9C79C668994C01 /* Pods-counselor_assistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-counselor_assistantTests.debug.xcconfig"; path = "Target Support Files/Pods-counselor_assistantTests/Pods-counselor_assistantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50558C7D273F8502006C74BD /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		507950A6271A198A00EC4592 /* VisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitViewController.swift; sourceTree = "<group>"; };
+		507950A6271A198A00EC4592 /* VisitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewController.swift; sourceTree = "<group>"; };
 		507950A8271A259400EC4592 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		50FA51BE272FDD3F0010A0A2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		524107F52713FE5F00D6F11E /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +240,7 @@
 				1CB6F538272FC19B00C05AC8 /* newVisitController.swift */,
 				1CB4867326F8EE1000A4D469 /* ViewController.swift */,
 				529E6CB5270955C400BE8D07 /* SignViewController.swift */,
-				507950A6271A198A00EC4592 /* VisitViewController.swift */,
+				507950A6271A198A00EC4592 /* VisitTableViewController.swift */,
 				507950A8271A259400EC4592 /* VisitTableViewCell.swift */,
 				524107F52713FE5F00D6F11E /* AdminViewController.swift */,
 				A59A26AA27234EB500D21B25 /* accountViewController.swift */,
@@ -566,7 +568,7 @@
 				1CB4867026F8EE1000A4D469 /* AppDelegate.swift in Sources */,
 				1CB4867226F8EE1000A4D469 /* SceneDelegate.swift in Sources */,
 				507950A9271A259500EC4592 /* VisitTableViewCell.swift in Sources */,
-				507950A7271A198A00EC4592 /* VisitViewController.swift in Sources */,
+				507950A7271A198A00EC4592 /* VisitTableViewController.swift in Sources */,
 				50FA51BF272FDD3F0010A0A2 /* UserModel.swift in Sources */,
 				1CDF5AE027095853004967AB /* VisitModel.swift in Sources */,
 			);

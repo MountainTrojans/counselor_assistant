@@ -27,21 +27,14 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
     }
     
     
-    //@IBOutlet weak var visitTableViews: UITableView!
     
+    @IBOutlet weak var switchBtn: UIBarButtonItem!
     var visits = Array<Visit>();
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
-//        visitTableViews.delegate = self
-//        visitTableViews.dataSource = self
-        
-        
-      //  VisitModel.shared.loadExistingInfo()
-        // Do any additional setup after loading the view.
     }
     
     
@@ -50,6 +43,9 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
             VisitModel.loadExistingInfo(vc: self, email: AccountModel.sharedInstance.gmail!)
             UserModel.getUser(vc: self)
            tableView.reloadData()
+        
+            switchBtn.customView?.isHidden = !AccountModel.sharedInstance.isAdmin
+        
        }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,7 +69,22 @@ class VisitTableViewController: UITableViewController, visitsAcquiredDelegate,
            if let newVisitcon = segue.destination as? NewVisitController{
                 if let selectedIndex = tableView.indexPathForSelectedRow?.row{
                     print("selecting" + String(selectedIndex))
-               }
+               
+                   if let identity = segue.identifier{
+                       if identity == "ClickView"{
+                           newVisitcon.submitButton.customView?.isHidden = true
+                           
+                           newVisitcon.clientInitialsText = visits[selectedIndex].clientInitials ?? ""
+                           newVisitcon.totalRoundTripMilestextText = visits[selectedIndex].totalRoundTripMiles ?? 0
+                           newVisitcon.roundTripMinutesText = visits[selectedIndex].totalRoundTripMinutes ?? 0
+                           newVisitcon.serviceMinutesText = visits[selectedIndex].serviceMinutes ?? 0
+                           newVisitcon.documentationMinutesText = visits[selectedIndex].documentationMinutes ?? 0
+                           newVisitcon.NotesText = visits[selectedIndex].clientInitials ?? ""
+                           
+                           
+                       }
+                   }
+                }
            }
         
     }

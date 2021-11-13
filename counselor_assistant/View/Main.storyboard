@@ -282,6 +282,9 @@
                                     <action selector="submitVisitTapped:" destination="a23-By-A7d" eventType="touchUpInside" id="2Nh-Lu-G8T"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <action selector="submitLabel:" destination="a23-By-A7d" id="Gpt-IY-MKF"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -296,6 +299,7 @@
                         <outlet property="programBtn" destination="3pc-Pp-fwx" id="sBU-ws-WdS"/>
                         <outlet property="roundTripMinutes" destination="rVb-jW-8l1" id="RsD-X5-8Wa"/>
                         <outlet property="serviceMinutes" destination="XH3-M5-ouc" id="eIF-Y0-4yZ"/>
+                        <outlet property="submitButton" destination="Ia5-Y9-xtY" id="EiF-df-f8E"/>
                         <outlet property="totalRoundTripMiles" destination="Y7k-3n-j4q" id="vJw-pW-PX9"/>
                     </connections>
                 </viewController>
@@ -549,14 +553,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="programCodeCell" id="IVi-au-0IV" customClass="programsTableViewCell" customModule="counselor_assistant" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IVi-au-0IV" id="AvL-AE-Vnw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="programLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-ev-QRh">
-                                            <rect key="frame" x="154" y="11" width="106" height="21.5"/>
+                                            <rect key="frame" x="154" y="11" width="106" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -779,7 +783,7 @@
                                 <connections>
                                     <outlet property="date" destination="RLM-p5-2Dh" id="9Pk-1p-o2b"/>
                                     <outlet property="initials" destination="lp2-kT-iXr" id="1rK-dg-d6e"/>
-                                    <segue destination="a23-By-A7d" kind="show" id="Z9C-MN-qEW"/>
+                                    <segue destination="a23-By-A7d" kind="show" identifier="ClickView" id="Z9C-MN-qEW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -793,7 +797,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="JpN-9w-8hq">
                                 <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Switch Users"/>
                                 <connections>
                                     <action selector="popUpPicker:" destination="gYd-qX-xfl" eventType="touchUpInside" id="LEd-ji-6MW"/>
                                 </connections>
@@ -805,11 +809,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Visit"/>
                                 <connections>
-                                    <segue destination="a23-By-A7d" kind="show" id="de8-UI-eXv"/>
+                                    <segue destination="a23-By-A7d" kind="show" identifier="AddVisit" id="de8-UI-eXv"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="switchBtn" destination="x5U-jD-zav" id="Rte-Zp-6qZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tim-MB-y86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -834,7 +841,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="de8-UI-eXv"/>
+        <segue reference="Z9C-MN-qEW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CA Logo" width="1080" height="1080"/>
