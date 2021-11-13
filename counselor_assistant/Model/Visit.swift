@@ -10,7 +10,7 @@ import Foundation
 class Visit
 {
     //need to add the client initials as a parameter to the internal init
-    internal init( clientInitials: String? = nil,billableCodeSelection: String? = nil, programSelection: String? = nil, nonBillableCodeSelection: String? = nil, totalRoundTripMiles: Double? = nil, totalRoundTripMinutes: Double? = nil, serviceMinutes: Double? = nil, documentationMinutes: Double? = nil, noteWritten: Bool? = nil, noteApproved: Bool? = nil, CDI: Bool? = nil, notes: String? = nil, randomID: String = UUID.init().uuidString) {
+    internal init( clientInitials: String? = nil,billableCodeSelection: String? = nil, programSelection: String? = nil, nonBillableCodeSelection: String? = nil, totalRoundTripMiles: Double? = nil, totalRoundTripMinutes: Double? = nil, serviceMinutes: Double? = nil, documentationMinutes: Double? = nil, noteWritten: Bool? = nil, noteApproved: Bool? = nil, CDI: Bool? = nil, notes: String? = nil, date: String?, randomID: String = UUID.init().uuidString) {
         self.clientInitials = clientInitials
         self.billableCodeSelection = billableCodeSelection
         self.programSelection = programSelection
@@ -24,6 +24,11 @@ class Visit
         self.CDI = CDI
         self.notes = notes
         self.randomID = randomID
+        if let date = date {
+            self.date = date
+        } else {
+            self.date = "NO KNOWN DATE";
+        }
     }
     var clientInitials: String?;
     var billableCodeSelection: String?;
@@ -38,8 +43,6 @@ class Visit
     var CDI: Bool?;
     var notes: String?;
     var randomID: String;
-    
-    
-    
+    var date: String?;
 
 }

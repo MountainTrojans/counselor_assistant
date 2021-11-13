@@ -57,6 +57,7 @@ class VisitModel
                                     noteApproved: visitObj["noteApproved"] as? Bool,
                                     CDI: visitObj["CDI"] as? Bool,
                                     notes: visitObj["notes"] as? String,
+                                    date: visitObj["date"] as? String,
                                     randomID: document.documentID))
                         }
                     }
@@ -81,6 +82,7 @@ class VisitModel
             "noteApproved" : visit.noteApproved,
             "notes" : visit.notes,
             "CDI": visit.CDI,
+            "date": visit.date,
         ]) { (error) in
                 if error != nil
                 {
