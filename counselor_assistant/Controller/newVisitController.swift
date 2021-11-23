@@ -118,13 +118,14 @@ class NewVisitController: UIViewController, BillableCodeDelagate, NonBillableCod
         let documentMinutes:Double? = Double(documentationMinutes.text!)
         let notewritten:Bool? = noteWritten.isOn
         let noteapproved: Bool? = noteApproved.isOn
+        let counselor: String? = AccountModel.sharedInstance.gmail!
         let cdi:Bool? = CDI.isOn
         let today = Date()
         let formatter1 = DateFormatter()
         formatter1.dateStyle = .short
         let currentDate = formatter1.string(from: today)
         
-        let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi, date: currentDate);
+        let visit = Visit(clientInitials:client,billableCodeSelection: addbillableCode,programSelection: program,nonBillableCodeSelection: nonBillableCode,totalRoundTripMiles: addmiles,totalRoundTripMinutes: tripminutes,serviceMinutes: addserviceMinutes,documentationMinutes: documentMinutes,noteWritten: notewritten,noteApproved: noteapproved,CDI: cdi, date: currentDate, counselor: counselor);
         VisitModel.shared.addNewVisit(visit: visit, vc: self)
         self.navigationController?.popViewController(animated: true)
         print(BillCodeVar)

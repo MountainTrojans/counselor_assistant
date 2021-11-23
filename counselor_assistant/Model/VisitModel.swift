@@ -58,7 +58,9 @@ class VisitModel
                                     CDI: visitObj["CDI"] as? Bool,
                                     notes: visitObj["notes"] as? String,
                                     date: visitObj["date"] as? String,
-                                    randomID: document.documentID))
+                                    randomID: document.documentID,
+                                    counselor : visitObj["counselor"] as? String))
+                                
                         }
                     }
                     vc.didFetchVisits(data: visits);
@@ -82,7 +84,7 @@ class VisitModel
             "noteApproved" : visit.noteApproved,
             "notes" : visit.notes,
             "CDI": visit.CDI,
-            "date": visit.date,
+            "date": visit.date,"counselor": visit.counselor, "visitId" : visit.randomID
         ]) { (error) in
                 if error != nil
                 {
